@@ -5,9 +5,18 @@ import Button from '../../styles/GlobalComponents/Button';
 import { LeftSection } from './HeroStyles';
 
 const Hero = (props) => (
-  <div>
-    Hero
-  </div>
+  <Section row nopadding>
+    <LeftSection>
+      <SectionTitle main center>
+        Welcome To <br />
+        My personal Portfolio
+      </SectionTitle>
+      <SectionText>
+        The purpose of javascript
+      </SectionText>
+      <Button onClick={() => window.location = 'https://www.googleapis.com'}>Learn more</Button>
+    </LeftSection>
+  </Section>
 );
 
 export default Hero;
