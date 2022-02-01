@@ -9,22 +9,20 @@ const Footer = () => {
     <FooterWrapper>
       <LinkList>
         <LinkColumn>
-          <LinkTitle>Call</LinkTitle>
-          <LinkItem href="/">111-111-111</LinkItem>
+          <LinkTitle>Telefone</LinkTitle>
+          <LinkItem href="/">79 98836-8471</LinkItem>
         </LinkColumn>
         <LinkColumn>
           <LinkTitle>E-mail</LinkTitle>
-          <LinkItem href="/">111-111-111</LinkItem>
+          <LinkItem href="/">luizfelipesantospereira01@gmail.com
+</LinkItem>
         </LinkColumn>
-        <LinkColumn>
-          <LinkTitle></LinkTitle>
-          <LinkItem href="/">111-111-111</LinkItem>
-        </LinkColumn>
+        
       </LinkList>
       <SocialIconsContainer>
         <CompanyContainer>
           <Slogan>
-            Innovating one project at time.
+            PARTE DO SLOGAN
           </Slogan>
         </CompanyContainer>
         <SocialIcons href="/">

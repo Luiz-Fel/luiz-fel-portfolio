@@ -7,7 +7,7 @@ const Technologies = () =>  (
   <Section id="tech">
     <SectionDivider />
     <br />
-    <SectionTitle>Technologies</SectionTitle>
+    <SectionTitle>Tecnologias</SectionTitle>
     <SectionText>
       I've range of technologies
     </SectionText>
@@ -15,7 +15,7 @@ const Technologies = () =>  (
       <ListItem>
         <DiReact size="3rem"/>
         <ListContainer>
-          <ListTitle>Front-End</ListTitle>
+          <ListTitle>ReactJS</ListTitle>
           <ListParagraph>
             Experience with <br />
             React.js
