@@ -152,3 +152,19 @@ export const CarouselButtonDot = styled.div`
   width: 3px;
   height: 3px;
 `
+
+export const AboutMeParagraph = styled.p`
+  font-size: 18px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.75);
+
+  @media ${props => props.theme.breakpoints.md}{
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  @media ${props => props.theme.breakpoints.sm}{
+    font-size: 14px;
+    line-height: 22px;
+  }
+`

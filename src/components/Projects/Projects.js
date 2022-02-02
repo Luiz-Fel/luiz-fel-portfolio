@@ -4,11 +4,13 @@ import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag,
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
 
+
+
 const Projects = () => (
   <Section nopadding id="projects">
     <SectionDivider />
-    <SectionTitle main>
-      Projects
+    <SectionTitle main style={{paddingTop: "1rem",}}>
+      Projetos
     </SectionTitle>
     <GridContainer>
         {projects.map(({ id, image, title, description, tags, visit, source }) =>  (

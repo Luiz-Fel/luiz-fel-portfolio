@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
-import { DiCssdeck } from 'react-icons/di';
+import { DiCode } from 'react-icons/di';
+import Typewriter from 'typewriter-effect'
 
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span } from './HeaderStyles';
 
@@ -15,36 +16,52 @@ const Header = () =>  (
         marginBottom: '20px',
 
         }}>
-            <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
+            <DiCode size="4rem" /> <span>
+              <Typewriter 
+             onInit={(typewriter)=> {
+  
+              typewriter
+              .pauseFor(1000)
+              .typeString("Luiz-Fel")
+              .pauseFor(1200)
+              .deleteAll()
+              .typeString("Luiz Felipe")
+              .pauseFor(300)
+              .start()
+              .callFunction((state) => {
+                state.elements.cursor.style.animation = 'none'
+                state.elements.cursor.style.display = 'none'
+             })
+              
+              }} 
+            />
+              </span> 
         </a>
       </Link>
     </Div1>
     <Div2>
         <li>
           <Link href="#projects">
-            <NavLink>Projects</NavLink>
+            <NavLink>Projetos</NavLink>
           </Link>
         </li>
         <li>
           <Link href="#tech">
-            <NavLink>Technologies</NavLink>
+            <NavLink>Tecnologias</NavLink>
           </Link>
         </li>
         <li>
           <Link href="#about">
-            <NavLink>About</NavLink>
+            <NavLink>Sobre</NavLink>
           </Link>
         </li>
     </Div2>
     <Div3>
-      <SocialIcons href="/">
+      <SocialIcons href="https://github.com/Luiz-Fel">
         <AiFillGithub size="3rem"/>
       </SocialIcons>
-      <SocialIcons href="/">
+      <SocialIcons href="https://www.linkedin.com/in/luiz-felipe-653b7a1a5/">
         <AiFillLinkedin size="3rem"/>
-      </SocialIcons>
-      <SocialIcons href="/">
-        <AiFillInstagram size="3rem"/>
       </SocialIcons>
     </Div3>
   </Container>

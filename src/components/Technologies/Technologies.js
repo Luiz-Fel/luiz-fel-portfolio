@@ -1,5 +1,6 @@
 import React from 'react';
-import { DiFirebase, DiReact, DiZend } from 'react-icons/di';
+import { DiBootstrap, DiReact} from 'react-icons/di';
+import { SiNextdotjs, SiRedux, SiTypescript } from "react-icons/si";
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
 
@@ -9,7 +10,7 @@ const Technologies = () =>  (
     <br />
     <SectionTitle>Tecnologias</SectionTitle>
     <SectionText>
-      I've range of technologies
+      Alguns dos meus conhecimentos
     </SectionText>
     <List>
       <ListItem>
@@ -23,9 +24,9 @@ const Technologies = () =>  (
         </ListContainer>
       </ListItem>
       <ListItem>
-        <DiFirebase size="3rem"/>
+        <SiNextdotjs size="3rem"/>
         <ListContainer>
-          <ListTitle>Back-end</ListTitle>
+          <ListTitle>NextJS</ListTitle>
           <ListParagraph>
             Experience with <br />
             React.js
@@ -33,9 +34,29 @@ const Technologies = () =>  (
         </ListContainer>
       </ListItem>
       <ListItem>
-        <DiFirebase size="3rem"/>
+        <SiRedux size="3rem"/>
         <ListContainer>
-          <ListTitle>UI designer</ListTitle>
+          <ListTitle>Redux</ListTitle>
+          <ListParagraph>
+            Experience with <br />
+            React.js
+          </ListParagraph>
+        </ListContainer>
+      </ListItem>
+      <ListItem>
+        <DiBootstrap size="3rem"/>
+        <ListContainer>
+          <ListTitle>Bootstrap</ListTitle>
+          <ListParagraph>
+            Experience with <br />
+            React.js
+          </ListParagraph>
+        </ListContainer>
+      </ListItem>
+      <ListItem>
+        <SiTypescript size="3rem"/>
+        <ListContainer>
+          <ListTitle>Typescript</ListTitle>
           <ListParagraph>
             Experience with <br />
             React.js
