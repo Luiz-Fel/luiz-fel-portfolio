@@ -164,7 +164,7 @@ export const AboutMeParagraph = styled.p`
   }
 
   @media ${props => props.theme.breakpoints.sm}{
-    font-size: 14px;
+    font-size: 2rem;
     line-height: 22px;
   }
 `

@@ -44,9 +44,10 @@ export const List = styled.ul`
   }
   
   @media ${props => props.theme.breakpoints.sm}{
-    display: flex;
+    grid-template-columns: repeat(2, 1fr);
     flex-direction: column;
-    margin: 32px 0;
+    gap: 2rem;
+    margin: 32px auto;
   }
 `
 
@@ -56,7 +57,7 @@ export const ListContainer = styled.div`
 
   @media ${props => props.theme.breakpoints.sm}{
     display: flex;
-    margin-left: 18px;
+    justify-content: center;
   }
 `
 
@@ -78,6 +79,8 @@ export const ListTitle = styled.h4`
   line-height: 28px;
   letter-spacing: 0.02em;
   margin-bottom: 4px;
+  text-align: center;
+
 }
 `
 
@@ -92,7 +95,7 @@ export const ListParagraph = styled.p`
   }
 
   @media ${props => props.theme.breakpoints.sm}{
-    font-size: 14px;
+    font-size: 2.5rem;
     line-height: 22px;
   }
 `
@@ -107,9 +110,11 @@ export const ListItem = styled.li`
 }
 
 @media ${props => props.theme.breakpoints.sm}{
-  margin-bottom: 14px;
-  max-width: 320px;
-  flex-direction: row;
+  margin-bottom: 1rem;
+  max-width: 420px;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3rem;
 }
 `
 

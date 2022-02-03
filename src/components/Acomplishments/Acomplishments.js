@@ -1,24 +1,26 @@
 import React from 'react';
 
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
-import { Box, Boxes, BoxNum, BoxText } from './AcomplishmentsStyles';
+import { Box, Boxes, BoxTitle, BoxText } from './AcomplishmentsStyles';
+import { DiReact } from 'react-icons/Di';
+import {AiOutlineRocket} from 'react-icons/ai'
 
 const data = [
-  { number: 20, text: 'Open Source Projects'},
-  { number: 1000, text: 'Students', },
-  { number: 1900, text: 'Github Followers', },
-  { number: 5000, text: 'Github Stars', }
+  { title: "Front End Development Libraries", text: 'FreeCodeCamp', time: "ano de conclusão: 2022", icon: <DiReact size="4rem" />},
+  { title: "Ignite", text: 'Rocketseat', time:"ano de conclusão: em andamento", icon: <AiOutlineRocket size="4rem" /> }
 ];
 
 const Acomplishments = () => (
  <Section>
   <SectionDivider />
-  <SectionTitle style={{paddingTop: "1rem"}}>Personal Acomplishments</SectionTitle>
+  <SectionTitle style={{paddingTop: "1rem"}}>Cursos/especializações</SectionTitle>
    <Boxes>
      {data.map((card, index) => (
         <Box key={index}>
-          <BoxNum>{card.number}</BoxNum>
+          {card.icon}
+          <BoxTitle>{card.title}</BoxTitle>
           <BoxText>{card.text}</BoxText>
+          <BoxText>{card.time}</BoxText>
         </Box>
      ))}  
    </Boxes>

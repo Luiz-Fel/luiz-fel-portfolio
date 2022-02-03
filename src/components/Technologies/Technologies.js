@@ -9,12 +9,9 @@ const Technologies = () =>  (
     <SectionDivider />
     <br />
     <SectionTitle>Tecnologias</SectionTitle>
-    <SectionText>
-      Alguns dos meus conhecimentos
-    </SectionText>
-    <List>
+    <List style={{marginTop: "2rem"}}>
       <ListItem>
-        <DiReact size="3rem"/>
+        <DiReact size="4rem"/>
         <ListContainer>
           <ListTitle>ReactJS</ListTitle>
           <ListParagraph>

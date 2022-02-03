@@ -12,9 +12,6 @@ const AboutMe = () => {
     <Section id="about">
       <SectionDivider />
       <SectionTitle style={{paddingTop: "1rem"}}>Sobre</SectionTitle>
-      <SectionText>
-        Um pouco mais sobre mim
-      </SectionText>
       <AboutMeParagraph>
         Meu foco atual é construir aplicações usando o ecossistema javascript, específicamente em React e NextJs, sou uma pessoa que gosta de desafios então estou sempre tentando aprender uma coisa nova.
         <br />
