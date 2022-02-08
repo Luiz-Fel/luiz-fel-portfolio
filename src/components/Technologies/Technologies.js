@@ -9,55 +9,41 @@ const Technologies = () =>  (
     <SectionDivider />
     <br />
     <SectionTitle>Tecnologias</SectionTitle>
+    <SectionText></SectionText>
     <List style={{marginTop: "2rem"}}>
       <ListItem>
         <DiReact size="4rem"/>
         <ListContainer>
           <ListTitle>ReactJS</ListTitle>
-          <ListParagraph>
-            Experience with <br />
-            React.js
-          </ListParagraph>
+          
         </ListContainer>
       </ListItem>
       <ListItem>
         <SiNextdotjs size="3rem"/>
         <ListContainer>
           <ListTitle>NextJS</ListTitle>
-          <ListParagraph>
-            Experience with <br />
-            React.js
-          </ListParagraph>
+          
         </ListContainer>
       </ListItem>
       <ListItem>
         <SiRedux size="3rem"/>
         <ListContainer>
           <ListTitle>Redux</ListTitle>
-          <ListParagraph>
-            Experience with <br />
-            React.js
-          </ListParagraph>
+          
         </ListContainer>
       </ListItem>
       <ListItem>
         <DiBootstrap size="3rem"/>
         <ListContainer>
           <ListTitle>Bootstrap</ListTitle>
-          <ListParagraph>
-            Experience with <br />
-            React.js
-          </ListParagraph>
+          
         </ListContainer>
       </ListItem>
       <ListItem>
         <SiTypescript size="3rem"/>
         <ListContainer>
           <ListTitle>Typescript</ListTitle>
-          <ListParagraph>
-            Experience with <br />
-            React.js
-          </ListParagraph>
+          
         </ListContainer>
       </ListItem>
     </List>
