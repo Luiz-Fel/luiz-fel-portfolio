@@ -19,7 +19,8 @@ export const Left = styled.div`
         margin: 1rem 0;
         font-size: 1.8rem;   
         background-color: transparent;
-        border: 1px solid #ffffffa8;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #ffffffa8;
         font-family: 'Droid Serif', serif;
         color: white;
         padding:0.6rem;
@@ -27,24 +28,40 @@ export const Left = styled.div`
         &:focus {
             border: 1px solid white;
         }
+        ::placeholder,
+        ::-webkit-input-placeholder {
+            color: #ffffffa8;
+        }
+        :-ms-input-placeholder {
+            color: #ffffffa8;
+        }
     }
     textarea {
-        padding: 0.5rem;
+        padding: 0.8rem;
         background-color: transparent;
         resize: none;
-        margin: 1rem 0;
+        margin: 2rem 0;
         overflow: auto;
         border: 1px solid #ffffffa8;
         color: white;
         transition: border 0.3s;
+        border-radius: 1px;
         &:focus {
             border: 1px solid white;
         }
+        ::placeholder,
+        ::-webkit-input-placeholder {
+            color: #ffffffa8;
+        }
+        :-ms-input-placeholder {
+            color: #ffffffa8;
+        }
+
     }
 `
 
 export const Right = styled.div`
-    padding: 3rem 1.5rem;
+    padding: 3.5rem 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -55,12 +72,21 @@ export const Right = styled.div`
         padding-bottom: 1rem;
         transition: background-color 0.2s;
         &:hover {{
-            background-color: black;
+            background-color: #dcdcdcc2;
         }}
     }
 `
 export const TextWarn = styled.p`
+    padding: 0.8rem;
     text-align: center;
     font-size: 1.7rem;
-    background-color:
+    border: 2px solid white;
+    border-radius: 1px;
+    a {
+        text-decoration: none;
+        color:  #dcdcdcc2;
+        &:hover {
+            color: white;
+        }
+    }
 `
