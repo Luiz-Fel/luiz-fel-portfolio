@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { Box, Boxes, BoxTitle, BoxText } from './AcomplishmentsStyles';
-import { DiReact } from 'react-icons/Di';
+import { DiReact } from 'react-icons/di';
 import {AiOutlineRocket} from 'react-icons/ai'
 
 const data = [
