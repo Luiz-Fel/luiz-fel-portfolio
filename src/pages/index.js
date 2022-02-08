@@ -4,7 +4,7 @@ import Projects from '../components/Projects/Projects';
 import Technologies from '../components/Technologies/Technologies';
 import AboutMe from '../components/AboutMe/AboutMe';
 import { Layout } from '../layout/Layout';
-import Head from 'next/Head';
+import Head from 'next/head';
 
 const Home = () => {
   return (
