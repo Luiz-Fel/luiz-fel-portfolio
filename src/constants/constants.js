@@ -9,15 +9,6 @@ export const projects = [
     id: 0,
   },
   {
-    title: 'PokeBook',
-    description:"Um app onde é simulado uma pokedex do jogo pokemon.",
-    image: '/images/2.png',
-    tags: ['React', 'NextJS', 'Bootstrap'],
-    source: 'https://google.com',
-    visit: 'https://google.com',
-    id: 1,
-  },
-  {
     title: 'ig.news',
     description: "Um newsletter fictício de assuntos relacionados a react utilizando login no github.",
       image: '/images/ignewsLogo.png',
