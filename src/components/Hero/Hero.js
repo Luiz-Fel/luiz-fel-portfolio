@@ -14,7 +14,7 @@ const Hero = (props) => (
       <SectionText>
         Um desenvolvedor front-end que ama transformar café em código. 
       </SectionText>
-      <Button onClick={() => window.location = 'https://www.googleapis.com'}>Entre em contato</Button>
+      <Button onClick={() => window.location = '#footer'}>Entre em contato</Button>
     </LeftSection>
   </Section>
 );
