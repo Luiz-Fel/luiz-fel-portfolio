@@ -1,7 +1,7 @@
 export const projects = [
   {
     title: 'CreamIce',
-    description: "Neste projeto crio um site fictício de uma sorveteria utilizando apenas html, css e javascript.",
+    description: "Um site one-page de uma sorveteria utilizando apenas html, css e javascript.",
     image: '/images/CreamIceLogo.png',
     tags: ['Javascript'],
     source: 'https://github.com/Luiz-Fel/CreamIce',
@@ -14,7 +14,7 @@ export const projects = [
     image: '/images/ignewsLogo.png',
     tags: ['React', 'NextJS', 'FaunaDb', 'Stripe'],
     source: 'https://github.com/Luiz-Fel/ignews',
-    visit: 'https://vercel.com/luiz-fel/ignews',
+    visit: 'https://ignews-luiz-fel.vercel.app/',
     id: 2,
   },
   {
