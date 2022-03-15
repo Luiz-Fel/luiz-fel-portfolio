@@ -35,7 +35,7 @@ export const LinkItem = styled.a`
 	}
 
 	@media ${props => props.theme.breakpoints.sm} {
-		font-size: 8px;
+		font-size: 12.5px;
 		line-height: 14px;
 		margin-bottom: 8px;
 		display: flex;
@@ -46,6 +46,7 @@ export const LinkItem = styled.a`
 export const SocialIconsContainer = styled.div`
 max-width: 1040px;
 display: flex;
+
 justify-content: space-between;
 
 @media ${props => props.theme.breakpoints.md}{
@@ -56,7 +57,7 @@ justify-content: space-between;
 @media ${props => props.theme.breakpoints.sm}{
   display: flex;
 	width: 100%;
-  flex-direction: column;
+  flex-direction: row;
 }
 `
 
@@ -75,7 +76,6 @@ export const CompanyContainer = styled.div`
 	@media ${props => props.theme.breakpoints.sm}{
 		display: flex;
 		flex-direction: column;
-		margin: 0 0 32px;
 		align-items: center;
 	}
 `

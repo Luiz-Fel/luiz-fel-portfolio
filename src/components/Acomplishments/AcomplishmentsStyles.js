@@ -52,8 +52,9 @@ export const Box = styled.div`
     }
   }
   @media ${props => props.theme.breakpoints.xs} {
-    width: 32rem
+    width: 32rem;
   }
+
 `
 export const BoxTitle = styled.h5`
   text-align: center;
