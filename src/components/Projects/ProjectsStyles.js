@@ -106,8 +106,10 @@ export const TagList = styled.ul`
 display: flex;
 justify-content: space-around;
 padding: 2rem;
+width: 90%;
 `
 export const Tag = styled.li`
 color: #d8bfbf;
 font-size: 1.5rem;
+max-width:2rem;
 `
