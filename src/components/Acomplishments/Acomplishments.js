@@ -6,14 +6,14 @@ import { DiReact } from 'react-icons/di';
 import {AiOutlineRocket} from 'react-icons/ai'
 
 const data = [
-  { title: "Front End Development Libraries", text: 'FreeCodeCamp', time: "ano de conclusão: 2022", icon: <DiReact size="4rem" />},
-  { title: "Ignite", text: 'Rocketseat', time:"ano de conclusão: em andamento", icon: <AiOutlineRocket size="4rem" /> }
+  { title: "Front End Development Libraries", text: 'FreeCodeCamp', time: "conclusion year: 2022", icon: <DiReact size="4rem" />},
+  { title: "React trail", text: 'Rocketseat', time:"conclusion year: 2022", icon: <AiOutlineRocket size="4rem" /> }
 ];
 
 const Acomplishments = () => (
  <Section>
   <SectionDivider />
-  <SectionTitle style={{paddingTop: "1rem"}}>Cursos/especializações</SectionTitle>
+  <SectionTitle style={{paddingTop: "1rem"}}>Courses | Certifications</SectionTitle>
    <Boxes>
      {data.map((card, index) => (
         <Box key={index}>

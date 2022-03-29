@@ -1,7 +1,7 @@
 export const projects = [
   {
     title: 'ig.news',
-    description: "Um newsletter fictício de assuntos relacionados a react utilizando login no github.",
+    description: "A fictional newsletter on react-related topics using github login.",
     image: '/images/ignewsLogo.png',
     tags: ['React', 'NextJS', 'Stripe'],
     source: 'https://github.com/Luiz-Fel/ignews',
@@ -10,7 +10,7 @@ export const projects = [
   },
   {
     title: 'CreamIce',
-    description: "Um site one-page de uma sorveteria utilizando apenas html, css e javascript.",
+    description: "A one-page website of an ice cream shop using only html, css and javascript.",
     image: '/images/CreamIceLogo.png',
     tags: ['Javascript', 'HTML', 'CSS'],
     source: 'https://github.com/Luiz-Fel/CreamIce',
@@ -19,7 +19,7 @@ export const projects = [
   },
   {
     title: 'dt money',
-    description: "Projeto em que construo uma dashboard de uma aplicação para controle financeiro.",
+    description: "Project in which I build a dashboard for an application for financial control.",
       image: '/images/dtmoneyPic.png',
       tags: ['React', 'Styled Components'],
     source: 'https://github.com/Luiz-Fel/dtmoney',

@@ -9,8 +9,8 @@ const Footer = () => {
     <FooterWrapper id="footer">
       <LinkList>
         <LinkColumn>
-          <LinkTitle>Telefone</LinkTitle>
-          <LinkItem>79 98836-8471</LinkItem>
+          <LinkTitle>Telephone number</LinkTitle>
+          <LinkItem> +55 79988368471</LinkItem>
         </LinkColumn>
         <LinkColumn>
           <LinkTitle>E-mail</LinkTitle>
@@ -22,13 +22,13 @@ const Footer = () => {
       <SocialIconsContainer>
         <CompanyContainer>
           <Slogan>
-            Aprender. Construir. Reaprender.
+          Learn. Build. Relearn.
           </Slogan>
         </CompanyContainer>
         <SocialIcons href="https://github.com/Luiz-Fel">
         <AiFillGithub size="3rem"/>
       </SocialIcons>
-      <SocialIcons href="https://www.linkedin.com/in/luiz-felipe-653b7a1a5/">
+      <SocialIcons href="https://www.linkedin.com/in/luiz-felipe-653b7a1a5/?locale=en_US">
         <AiFillLinkedin size="3rem"/>
       </SocialIcons>
       </SocialIconsContainer>

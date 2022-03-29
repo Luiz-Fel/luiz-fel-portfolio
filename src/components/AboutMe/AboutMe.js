@@ -11,14 +11,13 @@ const AboutMe = () => {
   return (
     <Section id="about">
       <SectionDivider />
-      <SectionTitle style={{paddingTop: "1rem"}}>Sobre</SectionTitle>
+      <SectionTitle style={{paddingTop: "1rem"}}>About me</SectionTitle>
       <AboutMeParagraph>
-        Meu foco atual é construir aplicações usando o ecossistema javascript, específicamente em React e NextJs, sou uma pessoa que gosta de desafios então estou sempre tentando aprender uma coisa nova.
+      My current focus is building applications using the javascript ecosystem, specifically in React and NextJs, I'm a person who likes challenges, so I'm always trying  learning something new.<br />
         <br />
+        I also like to study some backend and UX design.
         <br />
-        Também gosto de estudar um pouco de back-end e UX design.
-        <br />
-        Quando não estou programando, geralmente estou jogando um jogo, vendo uma série ou lendo um mangá.
+        When I'm not programming, I'm usually playing a game, watching a series, or reading a manga.
       </AboutMeParagraph>
       <br />
     </Section>

@@ -8,8 +8,8 @@ const Technologies = () =>  (
   <Section id="tech">
     <SectionDivider />
     <br />
-    <SectionTitle>Tecnologias</SectionTitle>
-    <SectionText></SectionText>
+    <SectionTitle>Technologies</SectionTitle>
+    <SectionText>My main technologies</SectionText>
     <List style={{marginTop: "2rem"}}>
       <ListItem>
         <DiReact size="4rem"/>

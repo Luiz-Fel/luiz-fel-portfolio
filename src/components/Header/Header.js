@@ -42,17 +42,17 @@ const Header = () =>  (
     <Div2>
         <li>
           <Link href="#projects">
-            <NavLink>Projetos</NavLink>
+            <NavLink>Projects</NavLink>
           </Link>
         </li>
         <li>
           <Link href="#tech">
-            <NavLink>Tecnologias</NavLink>
+            <NavLink>Technologies</NavLink>
           </Link>
         </li>
         <li>
           <Link href="#about">
-            <NavLink>Sobre</NavLink>
+            <NavLink>About</NavLink>
           </Link>
         </li>
     </Div2>
@@ -60,7 +60,7 @@ const Header = () =>  (
       <SocialIcons href="https://github.com/Luiz-Fel">
         <AiFillGithub size="3rem"/>
       </SocialIcons>
-      <SocialIcons href="https://www.linkedin.com/in/luiz-felipe-653b7a1a5/">
+      <SocialIcons href="https://www.linkedin.com/in/luiz-felipe-653b7a1a5/?locale=en_US">
         <AiFillLinkedin size="3rem"/>
       </SocialIcons>
     </Div3>
