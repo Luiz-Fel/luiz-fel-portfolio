@@ -119,7 +119,7 @@ const Experience = () => {
       name="skills&Exp."
       className="bg-gradient-to-b from-gray-800 to-black w-full h-screen"
     >
-      <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
+      <div className="max-w-screen-lg mx-auto pt-96 md:pt-4 p-4 flex flex-col justify-center w-full h-full text-white">
         <div>
           <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
             Skills & Experience
@@ -127,11 +127,11 @@ const Experience = () => {
           <p className="py-8"></p>
         </div>
         <div 
-          className="flex flex-col lg:flex-row justify-between items-center w-full"
+          className="flex flex-col lg:flex-row justify-between items-center w-full pt-12 lg:pt-0"
         >
 
           <motion.div className="">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-4">
               {techs.map((item, key) => {
                 return (
                   <motion.div
