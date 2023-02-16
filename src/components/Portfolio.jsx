@@ -21,10 +21,11 @@ const Portfolio = () => {
       id: 1,
       src: ignews,
       title: "Ignews",
-      description: "A newsletter on react-related topics with a subscription method and social media login",
+      description:
+        "A newsletter on react-related topics with a subscription method and social media login",
       demo: "https://ignews-luiz-fel.vercel.app/",
       code: "https://github.com/Luiz-Fel/ignews",
-      technologies: ["React.js", "Next.js", "Typescript", "Stripe"],
+      technologies: ["Next.js", "Typescript", "Stripe"],
     },
     {
       id: 2,
@@ -33,7 +34,7 @@ const Portfolio = () => {
       description: "A responsive one-page website for ice cream shop",
       demo: "https://luiz-fel.github.io/CreamIce/",
       code: "https://github.com/Luiz-Fel/CreamIce",
-      technologies: ["HTML", "CSS", "JavaScript"]
+      technologies: ["HTML", "CSS", "JavaScript"],
     },
     {
       id: 3,
@@ -83,75 +84,77 @@ const Portfolio = () => {
           })}
         </div>
         */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-4">
           {portfolios.map((item, key) => {
             return (
-              <div 
-                className="flex flex-col items-center justify-center gap-4 relative"
+              <div
+                className="flex flex-col items-center justify-center relative"
                 key={key}
                 onMouseEnter={() => setHoverItem(key)}
                 onMouseLeave={() => setHoverItem(null)}
               >
                 <div className="w-full  bg-gray-800 rounded-2xl">
-                  <img 
-                    src={item.src} 
-                    alt={item.title} 
+                  <img
+                    src={item.src}
+                    alt={item.title}
                     className="rounded-2xl w-full"
                   />
                 </div>
-                <div className={`${hoverItem === key ? "opacity-95" : "opacity-0"} flex flex-col item items-center  justify-center absolute w-full h-full t-0 l-0 r-0 b-0 bg-white rounded-2xl transition-all duration-200 ease-in`}>
+
+                <div
+                  className={`${
+                    hoverItem === key ? "opacity-95" : "opacity-0"
+                  } flex flex-col item items-center  justify-center absolute w-full h-full t-0 l-0 r-0 b-0 bg-white rounded-2xl transition-all duration-200 ease-in`}
+                >
                   <p
-                    className="text-black text-xl font-bold mb-8"
+                    className={`text-black text-xl font-bold ${
+                      item.description.length > 50 ? "mb-4" : "mb-6"
+                    }}`}
                   >
                     {item.title}
                   </p>
-                  <p 
-                    className="text-black mb-4 px-2 text-center"
-                  >
+                  <p className="text-black mb-4 px-2 text-center">
                     {item.description}
                   </p>
-                    <div 
-                      className="max-w-md flex flex-wrap justify-center"
-                    >
-                      {item.technologies.map((item, index) => {
-                        return (
-                          <span
+                  <div className="max-w-md flex flex-wrap justify-center">
+                    {item.technologies.map((item, index) => {
+                      return (
+                        <span
                           key={index}
                           className="text-black bg-gray-100 rounded-full px-4 py-2 m-2 text-sm"
-                          >
-                            {item}
-                          </span>
-                        );
-                      })}
-                    </div>
-
-                  <div className="flex items-center justify-around w-2/4">
-                    {
-                      item.demo ? (
+                        >
+                          {item}
+                        </span>
+                      );
+                    })}
+                  </div>
+                  {hoverItem === key && (
+                    <div className="flex items-center justify-around w-2/4">
+                      {item.demo ? (
                         <a href={item.demo}>
-                        <AiFillEye 
+                          <AiFillEye
+                            className="bg-gray-100 rounded-full p-2"
+                            size={40}
+                            color="#000"
+                          />
+                        </a>
+                      ) : (
+                        <AiFillEyeInvisible
+                          className="bg-gray-100 rounded-full p-2"
+                          size={40}
+                          color="#808080"
+                        />
+                      )}
+
+                      <a href={item.code}>
+                        <AiFillGithub
                           className="bg-gray-100 rounded-full p-2"
                           size={40}
                           color="#000"
                         />
                       </a>
-                      ) : 
-                      <AiFillEyeInvisible 
-                        className="bg-gray-100 rounded-full p-2"
-                        size={40}
-                        color="#808080" 
-                        />
-
-                    }
-                    
-                    <a href={item.code}>
-                      <AiFillGithub 
-                        className="bg-gray-100 rounded-full p-2"
-                        size={40}
-                        color="#000"
-                      />
-                    </a>
-                  </div>
+                    </div>
+                  )}
                 </div>
               </div>
             );
