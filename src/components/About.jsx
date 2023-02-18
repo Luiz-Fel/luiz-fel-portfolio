@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div
       name="about"
-      className="w-full h-3/4 pb-52 bg-gradient-to-b from-gray-800 to-black text-white"
+      className="w-full h-3/4 pb-24 md:pb-52 bg-gradient-to-b from-gray-800 to-black text-white pt-10"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">
@@ -13,7 +13,7 @@ const About = () => {
           </p>
         </div>
 
-        <p className="text-xl mt-20">
+        <p className="text-xl ">
           With a strong background in HTML, CSS, JavaScript, TypeScript and React, I am well-equipped to develop 
           websites that are responsive, fast, and accessible. I have experience in creating dynamic 
           user interfaces and have a solid understanding of web accessibility standards. I have also 
