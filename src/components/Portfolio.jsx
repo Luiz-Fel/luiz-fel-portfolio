@@ -31,7 +31,7 @@ const Portfolio = () => {
       id: 2,
       src: creamIce,
       title: "Cream Ice",
-      description: "A responsive one-page website for ice cream shop",
+      description: "A vanilla responsive javascript website for an ice cream parlor",
       demo: "https://luiz-fel.github.io/CreamIce/",
       code: "https://github.com/Luiz-Fel/CreamIce",
       technologies: ["HTML", "CSS", "JavaScript"],
@@ -58,7 +58,7 @@ const Portfolio = () => {
   return (
     <div
       name="portfolio"
-      className="bg-gradient-to-b from-black to-gray-800 w-full text-white pb-24 md:pb-44"
+      className="px-4 bg-gradient-to-b from-black to-gray-800 w-full text-white pb-24 md:pb-44"
     >
       <div className="max-w-screen-lg mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">
@@ -128,10 +128,10 @@ const Portfolio = () => {
                       );
                     })}
                   </div>
-                  {hoverItem === key && (
+                  
                     <div className="flex items-center justify-around w-2/4">
                       {item.demo ? (
-                        <a href={item.demo}>
+                        <a href={hoverItem === key ? item.demo : null}>
                           <AiFillEye
                             className="bg-gray-100 rounded-full p-2"
                             size={40}
@@ -146,7 +146,7 @@ const Portfolio = () => {
                         />
                       )}
 
-                      <a href={item.code}>
+                      <a href={hoverItem === key ? item.code : null}>
                         <AiFillGithub
                           className="bg-gray-100 rounded-full p-2"
                           size={40}
@@ -154,7 +154,6 @@ const Portfolio = () => {
                         />
                       </a>
                     </div>
-                  )}
                 </div>
               </div>
             );
