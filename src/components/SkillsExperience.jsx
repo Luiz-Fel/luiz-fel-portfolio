@@ -22,18 +22,18 @@ const Experience = () => {
     {
       id: 0,
       title: "Front-end Developer",
-      company: "Cubos Academy",
-      start: "August 2022",
-      startYear: "2022",
+      company: "Softeam",
+      start: "August 2021",
+      startYear: "2021",
       end: "Present",
     },
     {
       id: 1,
       title: "Front-end Developer",
       company: "Freelancer",
-      start: "October 2021",
-      startYear: "2021",
-      end: "August 2022",
+      start: "October 2020",
+      startYear: "2020",
+      end: "August 2021",
     }
   ];
   const techs = [
