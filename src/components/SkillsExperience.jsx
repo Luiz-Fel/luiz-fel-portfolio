@@ -22,19 +22,19 @@ const Experience = () => {
     {
       id: 0,
       title: "Front-end Developer",
-      company: "Softeam",
-      start: "August 2021",
-      startYear: "2021",
+      company: "Nova Tendência",
+      start: "May 2023",
+      startYear: "2023",
       end: "Present",
     },
     {
       id: 1,
       title: "Front-end Developer",
-      company: "Freelancer",
-      start: "October 2020",
-      startYear: "2020",
-      end: "August 2021",
-    }
+      company: "Softeam",
+      start: "August 2022",
+      startYear: "2022",
+      end: "Present",
+    },
   ];
   const techs = [
     {
