@@ -39,7 +39,7 @@ const SocialLinks = () => {
           Resume <BsFillPersonLinesFill size={30} />
         </>
       ),
-      href: "../assets/Luiz-Pereira-Developer-Resume.pdf",
+      href: "https://drive.google.com/file/d/19oYwp3dMpf-vf7zmr0yXfzjtIeYRv7Kl/view",
       style: "rounded-br-md",
       download: true,
     },

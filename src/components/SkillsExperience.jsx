@@ -29,7 +29,7 @@ const Experience = () => {
       start: "May 2023",
       startYear: "2023",
       end: "Present",
-      stacks: "React, Redux, TypeScript, MUI"
+      stacks: "React, Redux, TypeScript, MUI, Jest"
     },
     {
       id: 1,
