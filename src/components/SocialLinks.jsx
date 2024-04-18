@@ -1,6 +1,7 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import ResumePDF  from "../assets/Luiz-Pereira-Web-Developer-Resume.pdf"
 
 const SocialLinks = () => {
   const links = [
@@ -39,9 +40,9 @@ const SocialLinks = () => {
           Resume <BsFillPersonLinesFill size={30} />
         </>
       ),
-      href: "https://drive.google.com/file/d/1-CQiVGTvwrHmqardbF7FRd0mq_xRQuk5/view?usp=sharing",
+      href: ResumePDF,
       style: "rounded-br-md",
-      download: true,
+      download: "Luiz-Pereira-Web-Developer-Resume.pdf",
     },
   ];
 
