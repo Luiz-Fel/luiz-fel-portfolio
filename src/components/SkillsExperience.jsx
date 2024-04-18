@@ -31,9 +31,9 @@ const Experience = () => {
       id: 1,
       title: "Front-end Developer",
       company: "Softeam",
-      start: "August 2022",
-      startYear: "2022",
-      end: "Present",
+      start: "September 2021",
+      startYear: "2021",
+      end: "May 2023",
     },
   ];
   const techs = [
@@ -81,12 +81,6 @@ const Experience = () => {
       style: "shadow-green-400",
     },
     {
-      id: 8,
-      src: wordpress,
-      title: "Wordpress",
-      style: "shadow-blue-500",
-    },
-    {
       id: 9,
       src: figma,
       title: "Figma",
@@ -105,13 +99,6 @@ const Experience = () => {
       title: "TypeScript",
       style: "shadow-blue-500",
     },
-    {
-      id: 12,
-      src: php,
-      title: "PHP",
-      style: "shadow-purple-500",
-    },
-
   ];
 
   return (
