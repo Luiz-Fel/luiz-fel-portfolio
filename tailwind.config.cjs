@@ -5,6 +5,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       signature: ["Great Vibes"],
+      'mono': [ 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
     },
   },
   plugins: [],
