@@ -1,6 +1,7 @@
 import { useState } from "react";
 import form from "../../form";
 import ContactFormField from "./ContactFormField";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -37,12 +38,22 @@ const Contact = () => {
       message,
     };
     form
-      .post("", data, {
-        headers: {
-          Accept: "application/json",
-        },
-      })
-      .then((res) => { })
+    .post("", data, {
+      headers: {
+        Accept: "application/json",
+      },
+    })
+    .then((res) => {
+      if (res.status === 200) {
+        toast.success("Message sent successfully!", {
+          theme: "dark",
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+        });
+      }})
       .catch((err) => {
         console.log(err);
       }); 
