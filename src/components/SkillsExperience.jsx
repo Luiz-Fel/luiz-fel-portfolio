@@ -28,6 +28,7 @@ const Experience = () => {
       company: "Nova Tendência",
       start: "May 2023",
       startYear: "2023",
+      endYear: "Present",
       end: "Present",
       stacks: "React, Redux, TypeScript, MUI, Jest"
     },
@@ -36,6 +37,7 @@ const Experience = () => {
       title: "Front-end Developer",
       company: "Softeam",
       start: "September 2021",
+      endYear: "2023",
       startYear: "2021",
       end: "May 2023",
       stacks: "React, TypeScript, Tailwind, Figma"
@@ -156,15 +158,21 @@ const Experience = () => {
                       >
                         <div className=" flex w-full mb-12">
 
-                          <div>
+                        <div className="flex flex-col justify-between">
+
+                          <div className="flex justify-end min-w-20">
+                            <p className="text-sky-800 font-bold text-xl font-mono">{item.endYear}</p>
+                          </div>
+                          <div className="flex justify-end min-w-20">
                             <p className="text-sky-800 font-bold text-xl font-mono">{item.startYear}</p>
                           </div>
+                        </div>
                           <Divider />
                           <div>
                             <p className="pt-1 text-lg font-semibold">{item.title}</p>
                             <p className=" text-slate-400">{item.company}</p>
                             <br />
-                            <p className="font-light"><span className="font-semibold">Main Techs: </span>{item.stacks}</p>
+                            <p className="font-light"><span className="font-semibold">Techs used: </span>{item.stacks}</p>
                           </div>
                           
                         </div>
