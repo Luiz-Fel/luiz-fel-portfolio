@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import form from "../../form";
 import ContactFormField from "./ContactFormField";
 import { toast } from "react-toastify";
@@ -12,6 +12,9 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [spamCount, setSpamCount] = useState(1);
+  const [disabled, setDisabled] = useState(false);
+  const [seconds, setSeconds] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,34 +34,68 @@ const Contact = () => {
       setError(errors);
       return;
     }
-  
+
     const data = {
       name,
       email,
       message,
     };
+
+
+
     form
-    .post("", data, {
-      headers: {
-        Accept: "application/json",
-      },
-    })
-    .then((res) => {
-      if (res.status === 200) {
-        toast.success("Message sent successfully!", {
-          theme: "dark",
-          position: "bottom-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-        });
-      }})
+      .post("", data, {
+        headers: {
+          Accept: "application/json",
+        },
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          toast.success("Message sent successfully!", {
+            theme: "dark",
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+          });
+        }
+      })
       .catch((err) => {
+        if (err.status === 429) {
+          toast.error("Too many requests. Please try again later.", {
+            theme: "dark",
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+          });
+          setDisabled(true);
+          setSeconds(30 * spamCount);
+          setSpamCount(span => span + 1)
+        }
         console.log(err);
-      }); 
-      return true
+      });
+    return true
   };
+
+  useEffect(() => {
+    let intervalId;
+
+    if (disabled) {
+      intervalId = setInterval(() => {
+        if (seconds > 1) {
+          setSeconds(prevSeconds => prevSeconds - 1);
+        } else {
+          setDisabled(false);
+          clearInterval(intervalId);
+        }
+      }, 1000);
+    }
+
+    return () => clearInterval(intervalId);
+  }, [seconds])
 
   return (
     <div
@@ -77,10 +114,10 @@ const Contact = () => {
           <form
             onSubmit={handleSubmit}
             method="POST"
-            
+
             className=" flex flex-col w-full md:w-1/2"
           >
-            <ContactFormField 
+            <ContactFormField
               type="text"
               name="name"
               placeholder="Enter your name"
@@ -88,8 +125,8 @@ const Contact = () => {
               setField={setName}
               error={error}
               setError={setError}
-              />
-           <ContactFormField 
+            />
+            <ContactFormField
               type="email"
               name="email"
               placeholder="Enter your email address"
@@ -97,8 +134,8 @@ const Contact = () => {
               setField={setEmail}
               error={error}
               setError={setError}
-              />
-              <ContactFormField 
+            />
+            <ContactFormField
               type="textarea"
               name="message"
               placeholder="Enter your message"
@@ -106,11 +143,12 @@ const Contact = () => {
               setField={setMessage}
               error={error}
               setError={setError}
-              />
-            
-            <button className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300">
-              Let's talk
+            />
+
+            <button disabled={disabled} className={`px-6 py-3 my-8 mx-auto w-32 flex items-center justify-center rounded-md transition-colors duration-300 ${disabled ? 'font-bold text-gray-700 bg-gray-400 cursor-not-allowed' : 'text-white bg-gradient-to-b from-cyan-500 to-blue-500 hover:scale-110'}`}>
+              {disabled ? `${seconds}s` : "Let's talk"}
             </button>
+
           </form>
         </div>
       </div>
