@@ -1,20 +1,13 @@
 import { motion } from "framer-motion";
 
-import html from "../assets/html.png";
-import css from "../assets/css.png";
-import javascript from "../assets/javascript.png";
-import reactImage from "../assets/react.png";
-import nextjs from "../assets/nextjs.png";
-import typescript from "../assets/typescript.png";
-import sass from "../assets/sass.png";
-import php from "../assets/php.png";
-import nodejs from "../assets/nodejs.png";
-import figma from "../assets/figma.png";
-import tailwind from "../assets/tailwind.png";
-import wordpress from "../assets/wordpress.png";
-import redux from "../assets/redux.png";
-import mui from "../assets/mui.png";
-import jest from "../assets/jest.png";
+import javascript from "../assets/skillIcons/javascript.png";
+import reactImage from "../assets/skillIcons/react.png";
+import typescript from "../assets/skillIcons/typescript.png";
+import figma from "../assets/skillIcons/figma.png";
+import tailwind from "../assets/skillIcons/tailwind.png";
+import redux from "../assets/skillIcons/redux.png";
+import mui from "../assets/skillIcons/mui.png";
+import jest from "../assets/skillIcons/jest.png"
 
 import Divider from "./Divider";
 
