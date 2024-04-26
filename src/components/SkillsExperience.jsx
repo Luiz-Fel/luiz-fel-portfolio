@@ -1,94 +1,11 @@
 import { motion } from "framer-motion";
-
-import javascript from "../assets/skillIcons/javascript.png";
-import reactImage from "../assets/skillIcons/react.png";
-import typescript from "../assets/skillIcons/typescript.png";
-import figma from "../assets/skillIcons/figma.png";
-import tailwind from "../assets/skillIcons/tailwind.png";
-import redux from "../assets/skillIcons/redux.png";
-import mui from "../assets/skillIcons/mui.png";
-import jest from "../assets/skillIcons/jest.png"
+import { works, techs } from "../constants";
 
 import Divider from "./Divider";
 
 const Experience = () => {
 
 
-  const works = [
-    {
-      id: 0,
-      title: "Front-end Developer",
-      company: "Nova Tendência",
-      start: "May 2023",
-      startYear: "2023",
-      endYear: "Present",
-      end: "Present",
-      stacks: "React, Redux, TypeScript, MUI, Jest"
-    },
-    {
-      id: 1,
-      title: "Front-end Developer",
-      company: "Softeam",
-      start: "September 2021",
-      endYear: "2023",
-      startYear: "2021",
-      end: "May 2023",
-      stacks: "React, TypeScript, Tailwind, Figma"
-    },
-  ];
-  const techs = [
-    {
-      id: 4,
-      src: reactImage,
-      title: "React",
-      style: "shadow-blue-400",
-    },
-    {
-      id: 3,
-      src: javascript,
-      title: "JavaScript",
-      style: "shadow-yellow-500",
-    },
-    {
-      id: 5,
-      src: tailwind,
-      title: "Tailwind CSS",
-      style: "shadow-sky-400",
-    },
-    {
-      id: 6,
-      src: mui,
-      title: "Material UI",
-      style: "shadow-blue-600",
-      background: "",
-    },
-    {
-      id: 9,
-      src: figma,
-      title: "Figma",
-      style: "shadow-orange-500",
-      background: "bg-white",
-    },
-    
-    {
-      id: 11,
-      src: typescript,
-      title: "TypeScript",
-      style: "shadow-blue-500",
-    },
-    {
-      id: 1,
-      src: redux,
-      title: "Redux",
-      style: "shadow-purple-500",
-    },
-    {
-      id: 10,
-      src: jest,
-      title: "Jest",
-      style: "shadow-red-500",
-    },
-  ];
 
   return (
     <div
