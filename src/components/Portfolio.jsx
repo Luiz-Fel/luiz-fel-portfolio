@@ -1,11 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { AiFillEye, AiFillGithub, AiFillEyeInvisible } from "react-icons/ai";
 
 import { portfolios } from "../constants.js"
 
 
-
-const Portfolio = () => {
+const Portfolio = forwardRef(({}, ref) => {
   
 
   /*const [filter, setFilter] = React.useState("All");
@@ -15,10 +14,9 @@ const Portfolio = () => {
   };*/
 
   const [hoverItem, setHoverItem] = React.useState(null);
-
   return (
     <div
-      name="portfolio"
+      ref={ref}
       className="px-4 bg-gradient-to-b from-black to-gray-800 w-full text-white pb-24 md:pb-44"
     >
       <div className="max-w-screen-lg mx-auto flex flex-col justify-center w-full h-full">
@@ -123,6 +121,6 @@ const Portfolio = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Portfolio;

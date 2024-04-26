@@ -1,15 +1,17 @@
+import { forwardRef, useRef } from "react";
 import HeroImage from "../assets/heroImage.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
 
 
-const Home = () => {
+const Home = forwardRef(({}, ref) => {
   return (
     <div
-      name="home"
+      ref={ref}
       className="md:h-screen w-full bg-gradient-to-b from-black via-black to-gray-800 pt-28 sm:pt-0"
     >
       <div className="max-w-screen-lg mx-auto gap-12 flex flex-col items-center justify-center h-full px-4 md:flex-row">
+
         <div className="flex flex-col justify-center h-full">
           <h2 className="text-4xl sm:text-7xl font-bold text-white">
             Hi there!
@@ -46,6 +48,6 @@ const Home = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Home;

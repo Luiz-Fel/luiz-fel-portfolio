@@ -1,55 +1,36 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-scroll";
-import logoBranco from "../assets/logoBranco.svg";
+import { links } from "../constants";
+import logoWhite from "../assets/logoWhite.svg";
 
-const NavBar = () => {
+const NavBar = ({ refs }) => {
   const [nav, setNav] = useState(false);
 
-  const links = [
-    {
-      id: 1,
-      link: "home",
-    },
-    {
-      id: 2,
-      link: "about",
-    },
-    {
-      id: 3,
-      link: "portfolio",
-    },
-    {
-      id: 4,
-      link: "skills&Exp.",
-    },
-    {
-      id: 5,
-      link: "contact",
-    },
-  ];
 
   return (
     <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed z-10">
       <div>
         <a href="/">
-          <img 
-            src={logoBranco} 
-            alt="luiz-fel" 
+          <img
+            src={logoWhite}
+            alt="luiz-fel"
             className="mt-2 w-14 md:w-20 sm:p-2 "
-            />
+          />
         </a>
       </div>
 
       <ul className="hidden md:flex">
-        {links.map(({ id, link }) => (
+        {links.map(({ id, link, linkName }) => (
           <li
             key={id}
             className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:text-gray-200 hover:scale-105 duration-200"
+            onClick={() => {
+              refs[link + "Ref"].current?.scrollIntoView({
+                behavior: "smooth",
+              }); 
+            }}
           >
-            <Link to={link} smooth duration={500}>
-              {link}
-            </Link>
+            {linkName}
           </li>
         ))}
       </ul>
@@ -68,14 +49,7 @@ const NavBar = () => {
               key={id}
               className="px-4 cursor-pointer capitalize py-6 text-4xl"
             >
-              <Link
-                onClick={() => setNav(!nav)}
-                to={link}
-                smooth
-                duration={500}
-              >
-                {link}
-              </Link>
+              {link}
             </li>
           ))}
         </ul>

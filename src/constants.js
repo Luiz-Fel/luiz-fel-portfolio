@@ -16,22 +16,27 @@ export const links = [
   {
     id: 1,
     link: "home",
+    linkName: "home",
   },
   {
     id: 2,
     link: "about",
+    linkName: "about",
   },
   {
     id: 3,
     link: "portfolio",
+    linkName: "portfolio",
   },
   {
     id: 4,
-    link: "skills&Exp.",
+    link: "skillExperience",
+    linkName: "skills&Exp.",
   },
   {
     id: 5,
     link: "contact",
+    linkName: "contact",
   },
 ];
 

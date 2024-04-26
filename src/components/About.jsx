@@ -1,8 +1,9 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-const About = () => {
+const About = forwardRef(({ }, ref) => {
   return (
     <div
+      ref={ref}
       name="about"
       className="w-full h-3/4 pb-24 md:pb-52 bg-gradient-to-b from-gray-800 to-black text-white pt-10"
     >
@@ -14,28 +15,25 @@ const About = () => {
         </div>
 
         <p className="text-xl ">
-          With a strong background in HTML, CSS, JavaScript, TypeScript and React, I am well-equipped to develop 
-          websites that are responsive, fast, and accessible. I have experience in creating dynamic 
-          user interfaces and have a solid understanding of web accessibility standards. I have also 
-          worked with various CSS frameworks such as TailwindCss, Styled Components, and SCSS.  I enjoy collaborating with designers, developers, and project managers to work together and build something stunning.
+          With a strong background in HTML, CSS, JavaScript, TypeScript and React, I am well-equipped to develop websites that are responsive, fast, and accessible. I have experience in creating dynamic user interfaces and have a solid understanding of web accessibility standards. I have also worked with various CSS frameworks such as TailwindCss, Styled Components, and SCSS. I enjoy collaborating with designers, developers, and project managers to work together and build something stunning.
         </p>
 
         <br />
         <p className="text-xl">
-          Whether I'm working on a new project or brainstorming with my team, I believe that every 
-          challenge is an opportunity to create something truly innovative and unique. I bring this 
-          spirit of creativity and experimentation to everything I do, and I'm always seeking new and 
+          Whether I'm working on a new project or brainstorming with my team, I believe that every
+          challenge is an opportunity to create something truly innovative and unique. I bring this
+          spirit of creativity and experimentation to everything I do, and I'm always seeking new and
           better ways to solve problems and bring amazing ideas to life.
         </p>
 
         <br />
         <p className="text-xl">
-          If you'd like to work together or just chat about development, feel free to reach out! I'm  
+          If you'd like to work together or just chat about development, feel free to reach out! I'm
           looking forward to connecting with you.
         </p>
       </div>
     </div>
   );
-};
+});
 
 export default About;
