@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
-import logoBranco from "../assets/logoBranco.svg";
+import logoWhite from "../assets/logoWhite.svg";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -34,7 +34,7 @@ const NavBar = () => {
       <div>
         <a href="/">
           <img 
-            src={logoBranco} 
+            src={logoWhite} 
             alt="luiz-fel" 
             className="mt-2 w-14 md:w-20 sm:p-2 "
             />
