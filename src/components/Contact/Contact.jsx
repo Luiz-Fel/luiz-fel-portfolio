@@ -1,9 +1,9 @@
-import { forwardRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import form from "../../form";
 import ContactFormField from "./ContactFormField";
 import { toast } from "react-toastify";
 
-const Contact = forwardRef(({}, ref) => {
+const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -99,7 +99,7 @@ const Contact = forwardRef(({}, ref) => {
 
   return (
     <div
-      ref={ref}
+      name="contact"
       className=" bg-gradient-to-b from-black to-gray-800 p-4 text-white"
     >
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
@@ -154,6 +154,6 @@ const Contact = forwardRef(({}, ref) => {
       </div>
     </div>
   );
-});
+};
 
 export default Contact;

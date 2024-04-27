@@ -2,15 +2,14 @@ import { motion } from "framer-motion";
 import { works, techs } from "../constants";
 
 import Divider from "./Divider";
-import { forwardRef } from "react";
 
-const Experience = forwardRef(({}, ref) => {
+const Experience = () => {
 
 
 
   return (
     <div
-      ref={ref}
+      name="skills&Exp."
       className="bg-gradient-to-b from-gray-800 to-black w-full md:h-full "
     >
       <div className="max-w-screen-lg mx-auto  md:pt-4 p-4 flex flex-col justify-center w-full h-full text-white">
@@ -101,6 +100,6 @@ const Experience = forwardRef(({}, ref) => {
       </div>
     </div>
   );
-});
+};
 
 export default Experience;
