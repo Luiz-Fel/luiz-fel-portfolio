@@ -14,29 +14,32 @@ const About = () => {
         </div>
 
         <p className="text-xl ">
-          With a strong background in HTML, CSS, JavaScript, TypeScript and
-          React, I am well-equipped to develop websites that are responsive,
-          fast, and accessible. I have experience in creating dynamic user
-          interfaces and have a solid understanding of web accessibility
-          standards. I have also worked with various CSS frameworks such as
-          TailwindCss, Styled Components, and SCSS. I enjoy collaborating with
-          designers, developers, and project managers to work together and build
-          something stunning.
+          With a strong command of JavaScript, TypeScript, and React, along with
+          proficiency in Redux, I am adept at developing responsive,
+          high-performance websites with dynamic user interfaces. My expertise
+          lies in leveraging these technologies to create innovative solutions
+          that meet both user needs and business objectives.
         </p>
 
         <br />
         <p className="text-xl">
-          Whether I'm working on a new project or brainstorming with my team, I
-          believe that every challenge is an opportunity to create something
-          truly innovative and unique. I bring this spirit of creativity and
-          experimentation to everything I do, and I'm always seeking new and
-          better ways to solve problems and bring amazing ideas to life.
+          In addition to React, I have extensive experience in managing state
+          with Redux, ensuring seamless data flow and efficient application
+          management. Working collaboratively with designers, developers, and
+          project managers is where I excel. Together, we turn ideas into
+          impactful digital experiences that engage users.
         </p>
 
         <br />
         <p className="text-xl">
-          If you'd like to work together or just chat about development, feel
-          free to reach out! I'm looking forward to connecting with you.
+          I approach each project as an opportunity for innovation and creative
+          problem-solving. Constantly exploring new techniques and technologies,
+          I'm committed to finding better ways to address challenges and bring
+          ideas to life. Whether it's diving into a new project or collaborating
+          with a team, I am dedicated to delivering exceptional results. If
+          you're interested in discussing development or exploring potential
+          collaborations, feel free to reach out. I'm excited to connect with
+          you!
         </p>
       </div>
     </div>
