@@ -3,31 +3,34 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 import logoWhite from "../assets/logoWhite.svg";
 
+const links = [
+  {
+    id: 1,
+    link: "home",
+  },
+  {
+    id: 2,
+    link: "about",
+  },
+  {
+    id: 3,
+    link: "portfolio",
+  },
+  {
+    id: 4,
+    link: "skills&Exp.",
+  },
+  /*
+  {
+    id: 5,
+    link: "contact",
+  },
+  */
+];
+
+
 const NavBar = () => {
   const [nav, setNav] = useState(false);
-
-  const links = [
-    {
-      id: 1,
-      link: "home",
-    },
-    {
-      id: 2,
-      link: "about",
-    },
-    {
-      id: 3,
-      link: "portfolio",
-    },
-    {
-      id: 4,
-      link: "skills&Exp.",
-    },
-    {
-      id: 5,
-      link: "contact",
-    },
-  ];
 
   return (
     <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed z-10">
@@ -45,7 +48,7 @@ const NavBar = () => {
         {links.map(({ id, link }) => (
           <li
             key={id}
-            className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:text-gray-200 hover:scale-105 duration-200"
+            className="px-4 cursor-pointer capitalize font-semibold text-gray-500 hover:text-gray-200 hover:scale-105 duration-200"
           >
             <Link to={link} smooth duration={500}>
               {link}
