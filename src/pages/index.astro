@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import App from '../App';
+---
+
+<Layout title="Meu Portfólio">
+	<main>
+		<App client:only="react" />
+	</main>
+</Layout>
