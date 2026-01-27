@@ -1,0 +1,96 @@
+---
+import ExperienceItem from "@/components/ExperienceItem.astro";
+import Layout from "@/layouts/Layout.astro";
+
+
+const experiences = [
+  {
+    role: "Senior Software Engineer",
+    company: "Tech Corp",
+    period: "2022 — Present",
+    description: "Leading the platform engineering team, responsible for core infrastructure and developer experience improvements.",
+    problem:
+      "Legacy codebase with 200ms+ page load times was causing 25% user drop-off during peak traffic.",
+    solution:
+      "Led migration to modern React architecture with server-side rendering, implemented aggressive caching strategies, and established performance budgets.",
+    result:
+      "Reduced load times to under 50ms, decreased bounce rate by 40%, and improved Core Web Vitals to green across all metrics.",
+  },
+  {
+    role: "Full Stack Developer",
+    company: "StartupXYZ",
+    period: "2020 — 2022",
+    description: "Built and scaled the core product from MVP to serving over 1 million daily active users.",
+    problem:
+      "Scaling challenges with a monolithic Node.js application serving 1M+ daily active users.",
+    solution:
+      "Decomposed monolith into microservices, implemented event-driven architecture with message queues, and set up auto-scaling infrastructure.",
+    result:
+      "Achieved 99.9% uptime, reduced infrastructure costs by 35%, and enabled team to deploy 10x more frequently.",
+  },
+  {
+    role: "Frontend Developer",
+    company: "Agency Studio",
+    period: "2018 — 2020",
+    description: "Developed responsive websites and web applications for diverse clients across multiple industries.",
+    problem:
+      "Inconsistent UI across 20+ client projects leading to maintenance overhead and brand inconsistencies.",
+    solution:
+      "Built a comprehensive design system with reusable components, design tokens, and automated accessibility testing.",
+    result:
+      "Cut development time by 40%, achieved WCAG 2.1 AA compliance across all projects, and reduced design-dev handoff friction.",
+  },
+];
+
+---
+<Layout>
+
+    <section class="min-h-screen pt-24 pb-24 bg-background">
+        <div class="container mx-auto px-6 max-w-5xl">
+          {/* Section header */}
+          <div class="mb-20">
+            <h2 class="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-3">
+              Professional Journey
+            </h2>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-4">
+              Where I've worked
+            </h1>
+            <p class="text-base text-muted-foreground max-w-2xl font-light leading-relaxed">
+              Solving complex problems through thoughtful engineering and collaborative leadership.
+            </p>
+          </div>
+
+          {/* Timeline */}
+          <div class="max-w-3xl">
+            {experiences.map((exp, index) => (
+              <ExperienceItem
+                {...exp}
+                isLast={index === experiences.length - 1}
+              />
+            ))}
+          </div>
+
+          {/* Optional: CTA at the bottom */}
+          <div class="mt-20 pt-12 border-t border-border-subtle max-w-3xl">
+            <p class="text-sm text-muted-foreground mb-4">
+              Want to know more about my work?
+            </p>
+            <div class="flex gap-4 flex-wrap">
+              <a 
+                href="/projects" 
+                class="inline-block border-2 border-foreground px-6 py-2 text-sm uppercase tracking-wider font-bold hover:bg-foreground hover:text-background transition-all duration-300"
+              >
+                View Projects
+              </a>
+              <a 
+                href="/contact" 
+                class="inline-block border-2 border-muted-foreground px-6 py-2 text-sm uppercase tracking-wider font-medium text-muted-foreground hover:border-foreground hover:text-foreground transition-all duration-300"
+              >
+                Get in Touch
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+</Layout>
