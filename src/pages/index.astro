@@ -1,10 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import App from '../App';
+import Home from '../components/Home.astro'; 
 ---
-
-<Layout title="Meu Portfólio">
-	<main>
-		<App client:only="react" />
-	</main>
+<Layout>
+  <Home />
 </Layout>
