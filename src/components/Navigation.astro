@@ -1,0 +1,77 @@
+---
+export interface NavLink {
+    label: string;
+    href: string;
+    ariaLabel?: string;
+}
+
+export interface Props {
+    links?: NavLink[];
+    currentPath?: string;
+}
+
+const {
+    links = [
+        { label: 'Work', href: '/projects' },
+        { label: 'Experience', href: '/experience' },
+        { label: 'Contact', href: '/contact' },
+    ],
+    currentPath = Astro.url.pathname,
+} = Astro.props;
+---
+
+<nav
+    id="main-nav"
+    class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-border-subtle transition-all ease-out duration-300 py-4"
+    role="navigation"
+    aria-label="Main navigation"
+>
+    <div class="container mx-auto px-6 flex items-center justify-between">
+        <a
+            href="/"
+            class="text-sm font-semibold tracking-tight text-foreground hover:text-muted-foreground transition-colors ease-out duration-300"
+        >
+            Luiz Pereira
+        </a>
+
+        <ul class="flex items-center gap-8">
+            {links.map((link) => {
+                const isActive = currentPath === link.href;
+                return (
+                    <li>
+                        <a
+                            href={link.href}
+                            class={`text-sm font-light transition-colors ease-out duration-300 ${
+                                isActive
+                                    ? 'text-foreground'
+                                    : 'text-muted-foreground hover:text-foreground'
+                            }`}
+                            aria-current={isActive ? 'page' : undefined}
+                            aria-label={link.ariaLabel ?? link.label}
+                        >
+                            {link.label}
+                        </a>
+                    </li>
+                );
+            })}
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const nav = document.getElementById('main-nav');
+    
+    const handleScroll = () => {
+        if (nav) {
+            if (window.scrollY > 20) {
+                nav.classList.remove('py-4');
+                nav.classList.add('py-3');
+            } else {
+                nav.classList.remove('py-3');
+                nav.classList.add('py-4');
+            }
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+</script>
