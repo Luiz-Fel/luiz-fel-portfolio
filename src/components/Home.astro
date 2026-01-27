@@ -1,47 +1,50 @@
 ---
-import Button from "@/components/Button.astro";
+import ButtonLink from "@/components/ButtonLink.astro";
+import Button from "@/components/ButtonLink.astro";
 import PageTransition from "@/components/PageTransition.astro";
 import { ArrowRight, FileText } from "@lucide/astro";
 ---
 
 <PageTransition>
   <section class="relative min-h-screen flex items-center justify-center dot-grid overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
+        <!-- Gradient overlay for depth -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
 
-    <div class="container mx-auto px-6 relative z-10">
-      <div class="max-w-3xl mx-auto text-center">
-        <div class="fade-in mb-8 inline-flex items-center gap-2 px-3 py-1.5 border border-border-subtle rounded-full">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-subtle" />
-          <span class="text-xs font-light text-muted-foreground">
-            Available for new opportunities
-          </span>
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="max-w-3xl mx-auto text-center">
+            <!-- Status badge -->
+            <div class="fade-in mb-8 inline-flex items-center gap-2 px-3 py-1.5 border rounded-full">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-subtle" />
+              <span class="text-xs font-light text-muted-foreground">
+                Available for new opportunities
+              </span>
+            </div>
+
+            <!-- Main heading -->
+            <h1 class="fade-in-delay-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1] mb-6">
+              John Doe
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="fade-in-delay-2 text-lg sm:text-xl font-light text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
+              Senior Web Developer crafting performant, accessible, and beautifully engineered digital experiences.
+            </p>
+
+            <!-- CTAs -->
+            <div class="fade-in-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <ButtonLink href="/projects" className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-foreground text-background hover:bg-foreground/90">
+                View Projects
+                <ArrowRight class="w-4 h-4 transition-transform ease-out duration-300 group-hover:translate-x-1" />
+              </ButtonLink>
+              <ButtonLink href="/resume" className="border bg-transparent text-foreground hover:bg-foreground hover:text-background px-7 py-3 rounded-lg inline-flex items-center gap-2">
+                <FileText class="w-4 h-4" />
+                Resume
+              </ButtonLink>
+            </div>
+          </div>
         </div>
 
-        <h1 class="fade-in-delay-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1] mb-6">
-          Luiz Pereira
-        </h1>
-
-        <p class="fade-in-delay-2 text-lg sm:text-xl font-light text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
-          Senior Web Developer crafting performant, accessible, and beautifully engineered digital experiences.
-        </p>
-
-        <div class="fade-in-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button >
-            <a href="/projects">
-              View Projects
-              <ArrowRight class="w-4 h-4 transition-transform ease-out duration-300 group-hover:translate-x-1" />
-            </a>
-          </Button>
-          <Button>
-            <a href="/resume.pdf" target="_blank" rel="noreferrer">
-              <FileText class="w-4 h-4" />
-              Resume
-            </a>
-          </Button>
-        </div>
-      </div>
-    </div>
-
-    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-  </section>
+        <!-- Bottom gradient fade -->
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-background to-transparent pointer-events-none" />
+      </section>
 </PageTransition>
