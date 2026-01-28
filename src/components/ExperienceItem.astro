@@ -4,9 +4,7 @@ interface Props {
   company: string;
   period: string;
   description: string;
-  problem: string;
-  solution: string;
-  result: string;
+  highlights: string[];
   isLast?: boolean;
 }
 
@@ -15,36 +13,29 @@ const {
   company,
   period,
   description,
-  problem,
-  solution,
-  result,
+  highlights,
   isLast = false,
 } = Astro.props;
 ---
 
 <div class="relative pl-8 pb-12 group">
-  {/* Background hover effect */}
   <div
     class="absolute -left-4 -right-4 -top-2 -bottom-2 rounded-lg bg-muted/0 group-hover:bg-muted/30 transition-all duration-300 -z-10"
   >
   </div>
 
-  {/* Timeline line - agora com traços pontilhados */}
   {
     !isLast && (
       <div class="absolute left-[2.5px] top-8 bottom-0 w-px border-l-2 border-dashed border-border-subtle group-hover:border-muted-foreground transition-colors" />
     )
   }
 
-  {/* Timeline dot with scale animation */}
   <div
     class="absolute left-0 top-2 w-1.75 h-1.75 rounded-full border-2 border-muted-foreground bg-background group-hover:border-foreground group-hover:bg-foreground group-hover:scale-125 transition-all duration-300"
   >
   </div>
 
-  {/* Content */}
   <div>
-    {/* Header */}
     <div class="mb-6">
       <h3 class="text-lg font-semibold text-foreground mb-1 group-hover:text-foreground transition-colors">
         {role}
@@ -54,49 +45,25 @@ const {
         <span class="text-border-subtle">•</span>
         <span class="font-light text-muted-foreground">{period}</span>
       </div>
-      {/* Description - novo campo */}
       <p class="text-sm text-muted-foreground leading-relaxed">
         {description}
       </p>
     </div>
 
-    {/* Problem-Solution-Result blocks with progressive borders */}
-    <div class="space-y-5">
-      {/* Challenge */}
-      <div class="border-l-2 border-muted-foreground/30 pl-4 transition-all duration-300 hover:border-muted-foreground/60">
-        <span
-          class="text-xs font-medium tracking-wider uppercase text-muted-foreground/70 block mb-2"
-        >
-          Challenge
-        </span>
-        <p class="text-sm font-light text-muted-foreground leading-relaxed">
-          {problem}
+    <div class="border-l-2 border-muted-foreground/40 pl-4 transition-all duration-300 hover:border-muted-foreground hover:pl-5">
+      <span
+        class="text-xs font-medium tracking-wider uppercase text-muted-foreground block mb-2"
+      >
+        Key Highlights
+      </span>
+      {highlights.map((highlight) => (
+        <div class="flex items-start mb-2">
+          <span class="text-foreground mr-2">-></span>
+        <p class="text-sm font-light text-muted-foreground leading-relaxed mb-2">
+          {highlight}
         </p>
-      </div>
-
-      {/* Solution */}
-      <div class="border-l-2 border-muted-foreground/50 pl-4 transition-all duration-300 hover:border-muted-foreground">
-        <span
-          class="text-xs font-medium tracking-wider uppercase text-muted-foreground block mb-2"
-        >
-          Solution
-        </span>
-        <p class="text-sm font-light text-muted-foreground leading-relaxed">
-          {solution}
-        </p>
-      </div>
-
-      {/* Result - destacado */}
-      <div class="border-l-2 border-foreground pl-4 transition-all duration-300 hover:border-foreground hover:pl-5">
-        <span
-          class="text-xs font-bold tracking-wider uppercase text-foreground block mb-2"
-        >
-          Impact
-        </span>
-        <p class="text-sm font-medium text-foreground leading-relaxed">
-          {result}
-        </p>
-      </div>
+        </div>
+      ))}
     </div>
   </div>
 </div>
