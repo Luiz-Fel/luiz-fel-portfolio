@@ -7,6 +7,14 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   integrations: [react()],
 
+  i18n: {
+    locales: ['en', 'pt-br'],
+    defaultLocale: 'en',
+    fallback: {
+      'pt-br': 'en',
+    }
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
