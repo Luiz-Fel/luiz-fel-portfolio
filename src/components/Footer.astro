@@ -1,4 +1,7 @@
 ---
+import GithubIcon from "../assets/github.svg";
+import LinkedinIcon from "../assets/linkedin.svg";
+import MailIcon from "../assets/mail.svg";
 export interface Props {
     siteName?: string;
 }
@@ -6,15 +9,50 @@ const { siteName = 'Luiz Pereira Portfolio' } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
-    <footer class="py-8 bg-background border-t border-border-subtle">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p class="text-sm font-light text-muted-foreground">
-            © {currentYear} {siteName}.
-          </p>
-          <p class="text-xs font-light text-muted-foreground/60">
-            Designed & Developed with Astro + TailwindCSS.
-          </p>
-        </div>
+<footer class="border-t border-border-subtle py-10">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      
+      <div class="space-y-1">
+        <p class="text-sm font-light text-muted-foreground">
+          © {currentYear} Luiz Pereira — Software Engineer.
+        </p>
+        <p class="text-xs font-light text-muted-foreground/80">
+          Built with Astro & Tailwind. Focused on performance and clarity.
+        </p>
       </div>
-    </footer>
+
+      <div class="flex items-center gap-4">
+        <a
+          href="https://github.com/Luiz-Fel"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          class="opacity-60 hover:opacity-100 transition-opacity"
+        >
+          <GithubIcon class="w-5 h-5" />
+        </a>
+
+        <a
+          href="https://linkedin.com/in/Luiz-Fel"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          class="opacity-60 hover:opacity-100 transition-opacity"
+        >
+          <LinkedinIcon class="w-5 h-5" />
+        </a>
+
+        <a
+          href="mailto:luizfelipesantospereira01@gmail.com"
+          aria-label="Email"
+          class="opacity-60 hover:opacity-100 transition-opacity"
+        >
+          <MailIcon class="w-5 h-5" />
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
