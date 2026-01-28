@@ -1,7 +1,10 @@
+import { React, Tailwindcss, Sanity, Nextdotjs, Typescript, Stripe, Html5, Css, Javascript, Firebase, Astro as AstroIcon } from 'simple-icons-astro';
+
 import creamIce from "./assets/portfolio/creamIce.png";
 import shopnow from "./assets/portfolio/shopnow.png";
 import shareNow from "./assets/portfolio/shareNow.png";
 import ignews from "./assets/portfolio/ignews.png";
+import portfolioImage from "./assets/portfolio/portfolio.png";
 
 import javascript from "./assets/skillIcons/javascript.png";
 import reactImage from "./assets/skillIcons/react.png";
@@ -45,30 +48,74 @@ export const portfolios = [
     id: 0,
     src: shareNow,
     title: "Sharenow",
-    description: "Image-based social media app",
+    description: "Full-stack social media platform for sharing and discovering images with real-time feed, user authentication, and content management powered by Sanity.io",
     demo: "https://sharenow-luiz-fel.netlify.app/login",
     code: "https://github.com/Luiz-Fel/sharenow",
-    technologies: ["React.js", "Tailwind CSS", "Sanity.io"],
+    technologies: [{
+      name: "React.js",
+      IconComponent: React,
+      colorClass: "text-tech-react"
+    },
+    {
+      name: "Tailwind CSS",
+      IconComponent: Tailwindcss,
+      colorClass: "text-tech-tailwind"
+    },
+    {      name: "Sanity.io",
+      IconComponent: Sanity,
+      colorClass: "text-tech-sanity"
+    }
+  
+  ],
   },
   {
     id: 1,
     src: ignews,
     title: "Ignews",
     description:
-      "A newsletter on react-related topics with a subscription method and social media login",
+      "Subscription-based newsletter platform featuring Stripe payment integration, GitHub OAuth authentication, and serverless architecture for React ecosystem content",
     demo: "https://ignews-luiz-fel.vercel.app/",
     code: "https://github.com/Luiz-Fel/ignews",
-    technologies: ["Next.js", "Typescript", "Stripe"],
+    technologies: [{
+      name: "Next.js",
+      IconComponent: Nextdotjs,
+      colorClass: "text-tech-nextjs"
+   },
+    {
+      name: "Typescript",
+      IconComponent: Typescript,
+      colorClass: "text-tech-typescript"
+    },
+    {
+      name: "Stripe",
+      IconComponent: Stripe,
+      colorClass: "text-tech-stripe"
+    }],
   },
   {
     id: 2,
     src: creamIce,
     title: "Cream Ice",
     description:
-      "A vanilla responsive javascript website for an ice cream parlor",
+      "Fully responsive website for an ice cream parlor built with vanilla JavaScript, featuring interactive UI elements and mobile-first design approach",
     demo: "https://luiz-fel.github.io/CreamIce/",
     code: "https://github.com/Luiz-Fel/CreamIce",
-    technologies: ["HTML", "CSS", "JavaScript"],
+    technologies: [{
+      name: "HTML5",
+      IconComponent: Html5,
+      colorClass: "text-tech-html5"
+    },
+    {
+      name: "CSS3",
+      IconComponent: Css,
+      colorClass: "text-tech-css3"
+    },
+    {
+      name: "JavaScript",
+      IconComponent: Javascript,
+      colorClass: "text-tech-javascript"
+    }
+  ]
   },
   {
     id: 3,
@@ -77,7 +124,39 @@ export const portfolios = [
     description: "An e-commerce website front page.",
     demo: null,
     code: "https://github.com/Luiz-Fel/Shopnow",
-    technologies: ["React.js", "Next.js", "Firebase"],
+    technologies: [{
+      name: "React.js",
+      IconComponent: React,
+      colorClass: "text-tech-react"
+    },
+    {
+      name: "Next.js",
+      IconComponent: Nextdotjs,
+      colorClass: "text-tech-nextjs"
+    }],
+  },
+  {
+    id: 4,
+    src: portfolioImage, // TODO: Add portfolio screenshot
+    title: "Portfolio",
+    description: "Performance-focused portfolio built with minimal JavaScript and a minimalist monochromatic design. Leverages Astro's static generation for optimal load times while maintaining modern interactivity",
+    demo: null, // Add your deployed URL here
+    code: "https://github.com/Luiz-Fel/luiz-fel-portfolio",
+    technologies: [{
+      name: "Astro",
+      IconComponent: AstroIcon,
+      colorClass: "text-tech-astro"
+    },
+    {
+      name: "TypeScript",
+      IconComponent: Typescript,
+      colorClass: "text-tech-typescript"
+    },
+    {
+      name: "Tailwind CSS",
+      IconComponent: Tailwindcss,
+      colorClass: "text-tech-tailwind"
+    }],
   },
 ];
 

@@ -2,65 +2,26 @@
 import ProjectCard from '@/components/ProjectCard.astro';
 import Layout from '../layouts/Layout.astro';
 import { useTranslations } from '../i18n/ui';
+import { portfolios } from '../constants';
+
 
 const lang = 'en';
 const t = useTranslations(lang);
 
-const projects = [
-  {
-    title: "Enterprise Dashboard",
-    description:
-      "A real-time analytics platform handling 10M+ daily events. Built with performance-first architecture and accessibility standards.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
-    techStack: [
-      { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-      { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-      { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-      { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-    ],
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: true,
-  },
-  {
-    title: "Design System",
-    description:
-      "A comprehensive component library with 50+ accessible components. Reduced development time by 40% across teams.",
-    image: "https://images.unsplash.com/photo-1618788372246-79faff0c3742?w=800&h=450&fit=crop",
-    techStack: [
-      { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-      { name: "Storybook", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg" },
-      { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-    ],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "API Gateway",
-    description:
-      "High-throughput API gateway processing 100k+ requests/second with intelligent caching and rate limiting.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=450&fit=crop",
-    techStack: [
-      { name: "Go", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
-      { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
-      { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-    ],
-    githubUrl: "#",
-  },
-  {
-    title: "E-Commerce Platform",
-    description:
-      "Full-stack marketplace with real-time inventory, payment processing, and optimized checkout flows.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop",
-    techStack: [
-      { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-      { name: "Stripe", icon: "https://images.seeklogo.com/logo-png/52/1/stripe-logo-png_seeklogo-527853.png" },
-      { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-    ],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-];
+// Map portfolios data to projects format
+const projects = portfolios.map((portfolio) => ({
+  title: portfolio.title,
+  description: portfolio.description,
+  image: portfolio.src.src,
+  techStack: portfolio.technologies.map(tech => ({
+    name: tech.name,
+    IconComponent: tech.IconComponent,
+    colorClass: tech.colorClass
+  })),
+  liveUrl: portfolio.demo ?? undefined,
+  githubUrl: portfolio.code,
+  featured: portfolio.id === 0,
+}));
 ---
 <Layout>
           <section class="min-h-screen pt-24 pb-24 bg-background">

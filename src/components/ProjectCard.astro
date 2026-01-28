@@ -1,12 +1,13 @@
 ---
 import { ExternalLink } from "@lucide/astro";
 import GithubIcon from "@/assets/github.svg";
+import { React } from 'simple-icons-astro';
 
 interface Props {
   title: string;
   description: string;
   image: string;
-  techStack: { name: string; icon: string }[];
+  techStack: { name: string; IconComponent?: any; colorClass?: string }[];
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
@@ -29,7 +30,6 @@ const {
         featured ? "md:col-span-2" : ""
       }`}
     >
-      {/* Project Image */}
       <div class="relative aspect-video overflow-hidden bg-secondary">
         <img
           src={image}
@@ -39,9 +39,7 @@ const {
         <div class="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent opacity-60" />
       </div>
 
-      {/* Content */}
       <div class="p-6">
-        {/* Header with links */}
         <div class="flex items-start justify-between mb-3">
           <h3 class="text-lg font-semibold text-foreground group-hover:text-foreground/90 transition-colors">
             {title}
@@ -72,7 +70,6 @@ const {
           </div>
         </div>
 
-        {/* Description */}
         <p class="text-sm font-light text-muted-foreground leading-relaxed mb-5">
           {description}
         </p>
@@ -80,15 +77,15 @@ const {
         <div class="flex items-center gap-3 flex-wrap">
           {techStack.map((tech) => (
             <div
-              class="flex items-center gap-1.5 px-2 py-1 rounded bg-secondary/50"
+              class="group/tech flex items-center gap-1.5 px-2 py-1 rounded bg-secondary/50 transition-colors hover:bg-secondary"
               title={tech.name}
             >
-              <img
-                src={tech.icon}
-                alt={tech.name}
-                class="w-4 h-4 tech-icon"
-              />
-              <span class="text-xs font-light text-muted-foreground">
+              {tech.IconComponent && (
+                <tech.IconComponent 
+                  class={`w-4 h-4 ${tech.colorClass || 'text-muted-foreground'} tech-icon`}
+                />
+              )}
+              <span class="text-xs font-light text-muted-foreground group-hover/tech:text-foreground">
                 {tech.name}
               </span>
             </div>

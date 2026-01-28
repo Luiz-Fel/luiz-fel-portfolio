@@ -77,6 +77,9 @@
   --color-border-subtle: oklch(10% 0 0);
 }
 
+
+
+
 @layer base {
   :root {
     /* Legacy HSL variables for backward compatibility */
@@ -179,6 +182,28 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Tech icon colors */
+  .text-tech-react { color: #61DAFB; }
+  .text-tech-tailwind { color: #38BDF8; }
+  .text-tech-sanity { color: #FF3A00; }
+  .text-tech-nextjs { color: #FFFFFF; }
+  .text-tech-typescript { color: #3178C6; }
+  .text-tech-stripe { color: #635BFF; }
+  .text-tech-html5 { color: #E34F26; }
+  .text-tech-css3 { color: #1572B6; }
+  .text-tech-javascript { color: #F7DF1E; }
+  .text-tech-firebase { color: #FFCA28; }
+  .text-tech-astro { color: #BC52EE; }
+
+  .tech-text {
+    transition: color 0.3s ease;
+  }
+
+  .tech-text:hover,
+  .group:hover .tech-text {
+    color: hsl(var(--foreground));
   }
 
   /* Fade in animation */
