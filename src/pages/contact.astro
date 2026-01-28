@@ -1,0 +1,75 @@
+---
+import { ArrowUpRight } from "@lucide/astro";
+import githubIcon from "../assets/github.svg";
+import linkedinIcon from "../assets/linkedin.svg";
+import mailIcon from "../assets/mail.svg";
+import ButtonLink from "@/components/ButtonLink.astro";
+import Layout from "@/layouts/Layout.astro";
+import { useTranslations } from '../i18n/ui';
+
+const lang = 'en';
+const t = useTranslations(lang);
+
+  const socialLinks = [
+    {
+      label: "GitHub",
+      href: "https://github.com",
+      icon: githubIcon,
+    },
+    {
+      label: "LinkedIn",
+      href: "https://linkedin.com",
+      icon: linkedinIcon,
+    },
+    {
+      label: "Email",
+      href: "mailto:hello@johndoe.dev",
+      icon: mailIcon,
+    },
+  ];
+
+---
+
+
+<Layout>
+
+
+<section class="min-h-screen pt-24 pb-24 bg-background flex items-center">
+        <div class="container mx-auto px-6">
+          <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-3">
+              {t('contact.section')}
+            </h2>
+            <p class="text-3xl sm:text-4xl font-extrabold text-foreground mb-6">
+              {t('contact.title')}
+            </p>
+            <p class="text-lg font-light text-muted-foreground mb-10 leading-relaxed">
+              {t('contact.subtitle')}
+            </p>
+
+            <ButtonLink
+              href="mailto:luizfelipesantospereira01@gmail.com"
+              className="group inline-flex items-center gap-2.5 h-14 px-8 rounded-lg bg-foreground text-background hover:bg-foreground/90 mb-8"
+              asChild
+            >
+            {t('contact.cta')}
+            <ArrowUpRight class="w-4 h-4 transition-transform ease-out duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </ButtonLink>
+            <div class="flex items-center justify-center gap-4">
+              {socialLinks.map((link) => (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-3 border rounded-lg text-muted-foreground hover:text-foreground hover:border-gray-darker transition-all ease-out duration-300"
+                  aria-label={link.label}
+                >
+                  <link.icon class="w-5 h-5" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+</Layout>
