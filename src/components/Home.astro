@@ -3,6 +3,14 @@ import ButtonLink from "@/components/ButtonLink.astro";
 import Button from "@/components/ButtonLink.astro";
 import PageTransition from "@/components/PageTransition.astro";
 import { ArrowRight, FileText } from "@lucide/astro";
+import { useTranslations, getLocalizedPath, type Lang, defaultLang } from '../i18n/ui';
+
+export interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 
@@ -16,29 +24,29 @@ import { ArrowRight, FileText } from "@lucide/astro";
             <div class="fade-in mb-8 inline-flex items-center gap-2 px-3 py-1.5 border rounded-full">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-subtle" />
               <span class="text-xs font-light text-muted-foreground">
-                Available for new opportunities
+                {t('home.status')}
               </span>
             </div>
 
             <!-- Main heading -->
             <h1 class="fade-in-delay-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1] mb-6">
-              John Doe
+              Luiz Pereira
             </h1>
 
             <!-- Subtitle -->
             <p class="fade-in-delay-2 text-lg sm:text-xl font-light text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
-              Senior Web Developer crafting performant, accessible, and beautifully engineered digital experiences.
+              {t('home.subtitle')}
             </p>
 
             <!-- CTAs -->
             <div class="fade-in-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <ButtonLink href="/projects" className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-foreground text-background hover:bg-foreground/90">
-                View Projects
+              <ButtonLink href={getLocalizedPath('/projects', lang)} className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-foreground text-background hover:bg-foreground/90">
+                {t('home.viewProjects')}
                 <ArrowRight class="w-4 h-4 transition-transform ease-out duration-300 group-hover:translate-x-1" />
               </ButtonLink>
               <ButtonLink href="/resume" className="border bg-transparent text-foreground hover:bg-foreground hover:text-background px-7 py-3 rounded-lg inline-flex items-center gap-2">
                 <FileText class="w-4 h-4" />
-                Resume
+                {t('home.resume')}
               </ButtonLink>
             </div>
           </div>

@@ -13,76 +13,76 @@ export const ui = {
     'nav.projects': 'Projects',
     'nav.experience': 'Experience',
     'nav.contact': 'Contact',
-    
+
     // Home
-    'home.status': 'Available for new opportunities',
-    'home.subtitle': 'Senior Web Developer crafting performant, accessible, and beautifully engineered digital experiences.',
+    'home.status': 'Available for new opportunities', // Mantido, pois reflete seu objetivo atual 
+    'home.subtitle': 'Frontend Developer with 4+ years of experience, specializing in React.js, TypeScript, and high-performance web applications.',
     'home.viewProjects': 'View Projects',
     'home.resume': 'Resume',
-    
+
     // Projects
     'projects.section': 'Selected Work',
     'projects.title': "Projects I've built",
-    
+
     // Experience
     'experience.section': 'Professional Journey',
     'experience.title': "Where I've worked",
-    'experience.subtitle': 'Solving complex problems through thoughtful engineering and collaborative leadership.',
+    'experience.subtitle': 'Building scalable applications and enhancing user experience through modern frontend technologies.',
     'experience.cta': 'Want to know more about my work?',
     'experience.viewProjects': 'View Projects',
     'experience.contact': 'Get in Touch',
-    
+
     // Contact
     'contact.section': 'Get in Touch',
     'contact.title': "Let's build something great",
-    'contact.subtitle': "I'm always interested in hearing about new opportunities, collaborations, or just connecting with fellow developers.",
+    'contact.subtitle': "I'm always interested in hearing about new opportunities, innovative projects, or just connecting with fellow developers.",
     'contact.cta': 'Say Hello',
-    
+
     // Footer
-    'footer.role': 'Software Engineer',
+    'footer.role': 'Frontend Developer',
     'footer.built': 'Built with Astro & Tailwind. Focused on performance and clarity.',
-    
+
     // Meta
     'meta.title': 'Luiz Pereira | Portfolio',
-    'meta.description': 'Portfolio of Luiz Pereira, web developer.',
+    'meta.description': 'Portfolio of Luiz Pereira, a Frontend Developer specializing in React.js, TypeScript, and scalable web applications.',
   },
   'pt-br': {
     // Navigation
     'nav.projects': 'Projetos',
     'nav.experience': 'Experiência',
     'nav.contact': 'Contato',
-    
+
     // Home
     'home.status': 'Disponível para novas oportunidades',
-    'home.subtitle': 'Desenvolvedor Web Sênior criando experiências digitais performáticas, acessíveis e elegantes.',
+    'home.subtitle': 'Desenvolvedor Frontend com mais de 4 anos de experiência, especializado em React.js, TypeScript e aplicações web de alta performance.',
     'home.viewProjects': 'Ver Projetos',
     'home.resume': 'Currículo',
-    
+
     // Projects
     'projects.section': 'Trabalhos Selecionados',
     'projects.title': 'Projetos que construí',
-    
+
     // Experience
     'experience.section': 'Jornada Profissional',
     'experience.title': 'Onde trabalhei',
-    'experience.subtitle': 'Resolvendo problemas complexos através de engenharia cuidadosa e liderança colaborativa.',
+    'experience.subtitle': 'Construindo aplicações escaláveis e melhorando a experiência do usuário através de tecnologias frontend modernas.',
     'experience.cta': 'Quer saber mais sobre meu trabalho?',
     'experience.viewProjects': 'Ver Projetos',
     'experience.contact': 'Entre em Contato',
-    
+
     // Contact
     'contact.section': 'Entre em Contato',
     'contact.title': 'Vamos construir algo incrível',
-    'contact.subtitle': 'Estou sempre interessado em ouvir sobre novas oportunidades, colaborações ou simplesmente conectar com outros desenvolvedores.',
+    'contact.subtitle': 'Estou sempre interessado em ouvir sobre novas oportunidades, projetos inovadores ou simplesmente conectar com outros desenvolvedores.',
     'contact.cta': 'Diga Olá',
-    
+
     // Footer
-    'footer.role': 'Engenheiro de Software',
+    'footer.role': 'Desenvolvedor Frontend',
     'footer.built': 'Feito com Astro & Tailwind. Focado em performance e clareza.',
-    
+
     // Meta
     'meta.title': 'Luiz Pereira | Portfólio',
-    'meta.description': 'Portfólio de Luiz Pereira, desenvolvedor web.',
+    'meta.description': 'Portfólio de Luiz Pereira, Desenvolvedor Frontend especializado em React.js, TypeScript e aplicações web escaláveis.',
   },
 } as const;
 

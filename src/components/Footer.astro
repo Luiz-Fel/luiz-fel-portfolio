@@ -2,10 +2,15 @@
 import GithubIcon from "../assets/github.svg";
 import LinkedinIcon from "../assets/linkedin.svg";
 import MailIcon from "../assets/mail.svg";
+import { useTranslations, type Lang, defaultLang } from '../i18n/ui';
+
 export interface Props {
-    siteName?: string;
+  siteName?: string;
+  lang?: Lang;
 }
-const { siteName = 'Luiz Pereira Portfolio' } = Astro.props;
+
+const { siteName = 'Luiz Pereira Portfolio', lang = defaultLang } = Astro.props;
+const t = useTranslations(lang);
 const currentYear = new Date().getFullYear();
 ---
 
@@ -15,10 +20,10 @@ const currentYear = new Date().getFullYear();
       
       <div class="space-y-1">
         <p class="text-sm font-light text-muted-foreground">
-          © {currentYear} Luiz Pereira — Software Engineer.
+          © {currentYear} Luiz Pereira — {t('footer.role')}.
         </p>
         <p class="text-xs font-light text-muted-foreground/80">
-          Built with Astro & Tailwind. Focused on performance and clarity.
+          {t('footer.built')}
         </p>
       </div>
 
