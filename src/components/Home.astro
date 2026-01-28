@@ -4,6 +4,7 @@ import Button from "@/components/ButtonLink.astro";
 import PageTransition from "@/components/PageTransition.astro";
 import { ArrowRight, FileText } from "@lucide/astro";
 import { useTranslations, getLocalizedPath, type Lang, defaultLang } from '../i18n/ui';
+import { Typescript, React, Nodedotjs, Tailwindcss, Astro as AstroIcon, Git, Docker, Nextdotjs, Redux, Jest } from 'simple-icons-astro';
 
 export interface Props {
   lang?: Lang;
@@ -16,7 +17,7 @@ const t = useTranslations(lang);
 
   <section class="relative min-h-screen flex items-center justify-center dot-grid overflow-hidden">
         <!-- Gradient overlay for depth -->
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
+        <div class="absolute inset-0 bg-linear-to-b from-transparent via-background/50 to-background pointer-events-none" />
 
         <div class="container mx-auto px-6 relative z-10">
           <div class="max-w-3xl mx-auto text-center">
@@ -48,6 +49,42 @@ const t = useTranslations(lang);
                 <FileText class="w-4 h-4" />
                 {t('home.resume')}
               </ButtonLink>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="fade-in-delay-4 mt-16 pt-8 border-t border-border/50">
+              <div class="flex flex-wrap items-center justify-center gap-6">
+                <div class="group transition-all duration-300 hover:scale-110" title="TypeScript" aria-label="TypeScript">
+                  <Typescript class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="React" aria-label="React">
+                  <React class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Next.js" aria-label="Next.js">
+                  <Nextdotjs class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Node.js" aria-label="Node.js">
+                  <Nodedotjs class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Redux" aria-label="Redux">
+                  <Redux class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Jest" aria-label="Jest">
+                  <Jest class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Docker" aria-label="Docker">
+                  <Docker class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Git" aria-label="Git">
+                  <Git class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Tailwind CSS" aria-label="Tailwind CSS">
+                  <Tailwindcss class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Astro" aria-label="Astro">
+                  <AstroIcon class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
