@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ButtonLink from '../components/ButtonLink.astro';
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const title = t('404.title');
+const description = t('404.subtitle');
+---
+
+<Layout title={title} description={description}>
+  <main class="min-h-screen flex items-center justify-center px-4">
+    <div class="max-w-2xl w-full text-center space-y-8">
+      <div class="relative">
+        <h1 
+          class="text-[150px] sm:text-[200px] md:text-[250px] font-black leading-none text-foreground/5 select-none"
+          aria-hidden="true"
+        >
+          404
+        </h1>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="space-y-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
+              {t('404.title')}
+            </h2>
+            <p class="text-lg sm:text-xl text-muted-foreground max-w-md mx-auto">
+              {t('404.subtitle')}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-base text-muted-foreground/80 max-w-lg mx-auto">
+        {t('404.description')}
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+        <ButtonLink 
+          href={getLocalizedPath('/', lang)} 
+          variant="primary"
+          className="border bg-transparent text-foreground hover:bg-foreground hover:text-background px-7 py-3 rounded-lg"
+        >
+          {t('404.backHome')}
+        </ButtonLink>
+        <ButtonLink 
+          href={getLocalizedPath('/projects', lang)} 
+          variant="secondary"
+          className="border bg-transparent text-foreground hover:bg-foreground hover:text-background px-7 py-3 rounded-lg"
+        >
+          {t('404.viewProjects')}
+        </ButtonLink>
+      </div>
+
+      <div class="pt-12">
+        <div class="w-24 h-0.5 bg-linear-to-r from-transparent via-foreground/20 to-transparent mx-auto"></div>
+      </div>
+    </div>
+  </main>
+</Layout>

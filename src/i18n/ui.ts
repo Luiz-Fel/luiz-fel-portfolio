@@ -45,6 +45,13 @@ export const ui = {
     // Meta
     'meta.title': 'Luiz Pereira | Portfolio',
     'meta.description': 'Portfolio of Luiz Pereira, a Frontend Developer specializing in React.js, TypeScript, and scalable web applications.',
+
+    // 404
+    '404.title': 'Page Not Found',
+    '404.subtitle': 'Oops! The page you are looking for does not exist.',
+    '404.description': 'It might have been moved or deleted, or perhaps you mistyped the URL.',
+    '404.backHome': 'Back to Home',
+    '404.viewProjects': 'View Projects',
   },
   'pt-br': {
     // Navigation
@@ -83,6 +90,13 @@ export const ui = {
     // Meta
     'meta.title': 'Luiz Pereira | Portfólio',
     'meta.description': 'Portfólio de Luiz Pereira, Desenvolvedor Frontend especializado em React.js, TypeScript e aplicações web escaláveis.',
+
+    // 404
+    '404.title': 'Página Não Encontrada',
+    '404.subtitle': 'Ops! A página que você está procurando não existe.',
+    '404.description': 'Ela pode ter sido movida ou excluída, ou talvez você tenha digitado o URL errado.',
+    '404.backHome': 'Voltar para Home',
+    '404.viewProjects': 'Ver Projetos',
   },
 } as const;
 
