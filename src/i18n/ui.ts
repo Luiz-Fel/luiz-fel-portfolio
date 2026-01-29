@@ -59,7 +59,7 @@ export const ui = {
     'home.resume': 'Currículo',
 
     // Projects
-    'projects.section': 'Trabalhos Selecionados',
+    'projects.section': 'Portfólio',
     'projects.title': 'Projetos que construí',
 
     // Experience
@@ -74,7 +74,7 @@ export const ui = {
     'contact.section': 'Entre em Contato',
     'contact.title': 'Vamos construir algo incrível',
     'contact.subtitle': 'Estou sempre interessado em ouvir sobre novas oportunidades, projetos inovadores ou simplesmente conectar com outros desenvolvedores.',
-    'contact.cta': 'Diga Olá',
+    'contact.cta': 'Enviar Mensagem',
 
     // Footer
     'footer.role': 'Desenvolvedor Frontend',
