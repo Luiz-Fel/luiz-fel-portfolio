@@ -1,79 +1,106 @@
 ---
-export interface NavLink {
-    label: string;
-    href: string;
-    ariaLabel?: string;
-}
+import { useTranslations, getLocalizedPath, languages, type Lang, defaultLang } from '../i18n/ui';
 
 export interface Props {
-    links?: NavLink[];
-    currentPath?: string;
+  lang?: Lang;
+  currentPath?: string;
 }
 
-const {
-    links = [
-        { label: 'Projects', href: '/projects' },
-        { label: 'Experience', href: '/experience' },
-        { label: 'Contact', href: '/contact' },
-    ],
-    currentPath = Astro.url.pathname,
-} = Astro.props;
+const { lang = 'en', currentPath = Astro.url.pathname } = Astro.props;
+
+const t = useTranslations(lang);
+
+const links = [
+  { label: t('nav.projects'), href: getLocalizedPath('/projects', lang) },
+  { label: t('nav.experience'), href: getLocalizedPath('/experience', lang) },
+  { label: t('nav.contact'), href: getLocalizedPath('/contact', lang) },
+];
+
+const homeHref = getLocalizedPath('/', lang);
+
+// Gera o link para trocar de idioma
+const currentPathWithoutLang = currentPath.replace(/^\/(pt-br|en)/, '') || '/';
+const otherLang = lang === 'en' ? 'pt-br' : 'en';
+const langSwitchHref = getLocalizedPath(currentPathWithoutLang, otherLang);
 ---
 
 <nav
-    id="main-nav"
-    class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-border-subtle transition-all ease-out duration-300 py-4"
-    role="navigation"
-    aria-label="Main navigation"
+  id="main-nav"
+  class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-border-subtle/10  transition-all ease-out duration-300 py-4"
+  role="navigation"
+  aria-label="Main navigation"
 >
-    <div class="container mx-auto px-6 flex items-center justify-between">
+  <div class="container mx-auto px-4 sm:px-4 md:px-6 flex items-center justify-between">
+    <a
+      href={homeHref}
+      class="group relative inline-block overflow-hidden border-b-2 border-foreground px-1 pb-1 font-black uppercase tracking-tighter"
+    >
+      <span
+        class="relative z-10 transition-colors duration-300 group-hover:text-background text-xs sm:text-sm md:text-base lg:text-xl"
+      >
+        <span class="hidden sm:inline">Luiz Pereira</span>
+        <span class="sm:hidden">LP</span>
+      </span>
+      <span
+        class="absolute inset-0 z-0 h-full w-0 bg-foreground transition-all duration-300 ease-out group-hover:w-full"
+      ></span>
+    </a>
 
-<a href="/" class="group relative inline-block overflow-hidden border-b-2 border-foreground px-1 pb-1 text-xl font-black uppercase tracking-tighter">
-  <span class="relative z-10 transition-colors duration-300 group-hover:text-background">
-    Luiz Pereira
-  </span>
-  <span class="absolute inset-0 z-0 h-full w-0 bg-foreground transition-all duration-300 ease-out group-hover:w-full"></span>
-</a>
-
-
-        <ul class="flex items-center gap-8">
-            {links.map((link) => {
-                const isActive = currentPath === link.href;
-                return (
-                    <li>
-                        <a
-                            href={link.href}
-                            class={`text-sm font-light transition-colors ease-out duration-300 ${
-                                isActive
-                                    ? 'text-foreground'
-                                    : 'text-muted-foreground hover:text-foreground'
-                            }`}
-                            aria-current={isActive ? 'page' : undefined}
-                            aria-label={link.ariaLabel ?? link.label}
-                        >
-                            {link.label}
-                        </a>
-                    </li>
-                );
-            })}
-        </ul>
-    </div>
+    <ul class="flex items-center gap-2 sm:gap-4 md:gap-8">
+      {
+        links.map((link) => {
+          const isActive = currentPath === link.href;
+          return (
+            <li class="group">
+              <a
+                href={link.href}
+                class={`relative text-xs sm:text-sm md:text-base font-medium tracking-wide transition-colors duration-300 ${
+                  isActive
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-4`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {link.label}
+                <span
+                  class={`absolute -bottom-1 left-0 h-px bg-foreground transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </a>
+            </li>
+          );
+        })
+      }
+      
+      {/* Language Switcher */}
+      <li>
+        <a
+          href={langSwitchHref}
+          class="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 px-1.5 sm:px-2 py-1 border border-border-subtle rounded-md hover:border-foreground"
+          aria-label={`Switch to ${languages[otherLang]}`}
+        >
+          {otherLang === 'pt-br' ? 'PT' : 'EN'}
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <script>
-    const nav = document.getElementById('main-nav');
-    
-    const handleScroll = () => {
-        if (nav) {
-            if (window.scrollY > 20) {
-                nav.classList.remove('py-4');
-                nav.classList.add('py-3');
-            } else {
-                nav.classList.remove('py-3');
-                nav.classList.add('py-4');
-            }
-        }
-    };
+  const nav = document.getElementById("main-nav");
 
-    window.addEventListener('scroll', handleScroll);
+  const handleScroll = () => {
+    if (nav) {
+      if (window.scrollY > 20) {
+        nav.classList.remove("py-4");
+        nav.classList.add("py-3");
+      } else {
+        nav.classList.remove("py-3");
+        nav.classList.add("py-4");
+      }
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
 </script>
