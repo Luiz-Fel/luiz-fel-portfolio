@@ -40,7 +40,7 @@ const t = useTranslations(lang);
                 {t('home.viewProjects')}
                 <ArrowRight class="w-4 h-4 transition-transform ease-out duration-300 group-hover:translate-x-1" />
               </ButtonLink>
-              <ButtonLink href="/resume" className="border bg-transparent text-foreground hover:bg-foreground hover:text-background px-7 py-3 rounded-lg inline-flex items-center gap-2">
+              <ButtonLink href={lang === 'pt-br' ? '/CVLuizFelipe.pdf' : '/Luiz-Pereira-Web-Developer-Resume.pdf'} className="border bg-transparent text-foreground hover:bg-foreground hover:text-background px-7 py-3 rounded-lg inline-flex items-center gap-2" target="_blank">
                 <FileText class="w-4 h-4" />
                 {t('home.resume')}
               </ButtonLink>
