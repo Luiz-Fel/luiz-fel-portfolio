@@ -6,14 +6,6 @@ import shareNow from "./assets/portfolio/shareNow.png";
 import ignews from "./assets/portfolio/ignews.png";
 import portfolioImage from "./assets/portfolio/portfolio.png";
 
-import javascript from "./assets/skillIcons/javascript.png";
-import reactImage from "./assets/skillIcons/react.png";
-import typescript from "./assets/skillIcons/typescript.png";
-import figma from "./assets/skillIcons/figma.png";
-import tailwind from "./assets/skillIcons/tailwind.png";
-import redux from "./assets/skillIcons/redux.png";
-import mui from "./assets/skillIcons/mui.png";
-import jest from "./assets/skillIcons/jest.png";
 
 export const links = [
   {
@@ -49,6 +41,10 @@ export const portfolios = [
     src: shareNow,
     title: "Sharenow",
     description: "Full-stack social media platform for sharing and discovering images with real-time feed, user authentication, and content management powered by Sanity.io",
+    ptBr: {
+      title: "Sharenow",
+      description: "Plataforma full-stack de mídia social para compartilhamento e descoberta de imagens com feed em tempo real, autenticação de usuário e gerenciamento de conteúdo alimentado por Sanity.io"
+    },
     demo: "https://sharenow-luiz-fel.netlify.app/login",
     code: "https://github.com/Luiz-Fel/sharenow",
     technologies: [{
@@ -98,6 +94,10 @@ export const portfolios = [
     title: "Cream Ice",
     description:
       "Fully responsive website for an ice cream parlor built with vanilla JavaScript, featuring interactive UI elements and mobile-first design approach",
+    ptBr: {
+      title: "Cream Ice",
+      description: "Site totalmente responsivo para uma sorveteria construído com JavaScript puro, apresentando elementos de interface interativos e abordagem de design mobile-first"
+    },
     demo: "https://luiz-fel.github.io/CreamIce/",
     code: "https://github.com/Luiz-Fel/CreamIce",
     technologies: [{
@@ -121,7 +121,11 @@ export const portfolios = [
     id: 3,
     src: shopnow,
     title: "ShopNow",
-    description: "An e-commerce website front page.",
+    description: "E-commerce landing page demo with responsive layout implementation with React and Next.js",
+    ptBr: {
+      title: "ShopNow",
+      description: "Página de demo de comércio eletrônico com layout responsivo implementado com React e Next.js"
+    },
     demo: null,
     code: "https://github.com/Luiz-Fel/Shopnow",
     technologies: [{
@@ -140,6 +144,10 @@ export const portfolios = [
     src: portfolioImage, // TODO: Add portfolio screenshot
     title: "Portfolio",
     description: "Performance-focused portfolio built with minimal JavaScript and a minimalist monochromatic design. Leverages Astro's static generation for optimal load times.",
+    ptBr: {
+      title: "Portfolio",
+      description: "Portfólio focado em desempenho construído com JavaScript mínimo e um design monocromático minimalista. Aproveita a geração estática do Astro para tempos de carregamento ideais."
+    },
     demo: null, // Add your deployed URL here
     code: "https://github.com/Luiz-Fel/luiz-fel-portfolio",
     technologies: [{
@@ -180,58 +188,5 @@ export const works = [
     startYear: "2021",
     end: "May 2023",
     stacks: "React, TypeScript, Tailwind, Figma",
-  },
-];
-export const techs = [
-  {
-    id: 4,
-    src: reactImage,
-    title: "React",
-    style: "shadow-blue-400",
-  },
-  {
-    id: 3,
-    src: javascript,
-    title: "JavaScript",
-    style: "shadow-yellow-500",
-  },
-  {
-    id: 5,
-    src: tailwind,
-    title: "Tailwind CSS",
-    style: "shadow-sky-400",
-  },
-  {
-    id: 6,
-    src: mui,
-    title: "Material UI",
-    style: "shadow-blue-600",
-    background: "",
-  },
-  {
-    id: 9,
-    src: figma,
-    title: "Figma",
-    style: "shadow-orange-500",
-    background: "bg-white",
-  },
-
-  {
-    id: 11,
-    src: typescript,
-    title: "TypeScript",
-    style: "shadow-blue-500",
-  },
-  {
-    id: 1,
-    src: redux,
-    title: "Redux",
-    style: "shadow-purple-500",
-  },
-  {
-    id: 10,
-    src: jest,
-    title: "Jest",
-    style: "shadow-red-500",
   },
 ];
