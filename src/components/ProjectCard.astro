@@ -13,6 +13,7 @@ interface Props {
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
+  eager?: boolean;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   liveUrl,
   githubUrl,
   featured = false,
+  eager = false,
 } = Astro.props;
 
 ---
@@ -36,6 +38,7 @@ const {
         <Image
           src={image}
           alt={title}
+          loading={eager ? "eager" : "lazy"}
           class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div class="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent opacity-60" />

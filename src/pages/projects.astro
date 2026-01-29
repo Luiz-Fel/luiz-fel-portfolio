@@ -20,6 +20,7 @@ const projects = portfolios.map((portfolio) => ({
   liveUrl: portfolio.demo ?? undefined,
   githubUrl: portfolio.code,
   featured: portfolio.id === 0,
+  eager: portfolio.id < 3,
 }));
 ---
 <Layout>
