@@ -1,8 +1,6 @@
 ---
-import GithubIcon from "../assets/github.svg";
-import LinkedinIcon from "../assets/linkedin.svg";
-import MailIcon from "../assets/mail.svg";
 import { useTranslations, type Lang, defaultLang } from '../i18n/ui';
+import { socialLinks } from '../constants';
 
 export interface Props {
   siteName?: string;
@@ -28,33 +26,17 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div class="flex items-center gap-4">
-        <a
-          href="https://github.com/Luiz-Fel"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-          class="opacity-60 hover:opacity-100 transition-opacity"
-        >
-          <GithubIcon class="w-5 h-5" />
-        </a>
-
-        <a
-          href="https://linkedin.com/in/Luiz-Fel"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          class="opacity-60 hover:opacity-100 transition-opacity"
-        >
-          <LinkedinIcon class="w-5 h-5" />
-        </a>
-
-        <a
-          href="mailto:luizfelipesantospereira01@gmail.com"
-          aria-label="Email"
-          class="opacity-60 hover:opacity-100 transition-opacity"
-        >
-          <MailIcon class="w-5 h-5" />
-        </a>
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+            class="opacity-60 hover:opacity-100 transition-opacity"
+          >
+            <link.icon class="w-5 h-5" />
+          </a>
+        ))}
       </div>
 
     </div>

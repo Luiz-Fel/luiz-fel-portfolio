@@ -1,32 +1,13 @@
 ---
 import { ArrowUpRight } from "@lucide/astro";
-import githubIcon from "../assets/github.svg";
-import linkedinIcon from "../assets/linkedin.svg";
-import mailIcon from "../assets/mail.svg";
 import ButtonLink from "@/components/ButtonLink.astro";
 import Layout from "@/layouts/Layout.astro";
 import { useTranslations } from '../i18n/ui';
 
+import { socialLinks } from '../constants';
+
 const lang = 'en';
 const t = useTranslations(lang);
-
-  const socialLinks = [
-    {
-      label: "GitHub",
-      href: "https://github.com",
-      icon: githubIcon,
-    },
-    {
-      label: "LinkedIn",
-      href: "https://linkedin.com",
-      icon: linkedinIcon,
-    },
-    {
-      label: "Email",
-      href: "mailto:hello@johndoe.dev",
-      icon: mailIcon,
-    },
-  ];
 
 ---
 

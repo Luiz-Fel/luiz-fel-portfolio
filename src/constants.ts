@@ -1,4 +1,5 @@
-import { React, Tailwindcss, Sanity, Nextdotjs, Typescript, Stripe, Html5, Css, Javascript, Firebase, Astro as AstroIcon } from 'simple-icons-astro';
+import { React, Tailwindcss, Sanity, Nextdotjs, Typescript, Stripe, Html5, Css, Javascript, Firebase, Astro as AstroIcon, Github } from 'simple-icons-astro';
+import { Mail } from '@lucide/astro';
 
 import creamIce from "./assets/portfolio/creamIce.png";
 import shopnow from "./assets/portfolio/shopnow.png";
@@ -6,34 +7,7 @@ import shareNow from "./assets/portfolio/shareNow.png";
 import ignews from "./assets/portfolio/ignews.png";
 import portfolioImage from "./assets/portfolio/portfolio.png";
 
-
-export const links = [
-  {
-    id: 1,
-    link: "home",
-    linkName: "home",
-  },
-  {
-    id: 2,
-    link: "about",
-    linkName: "about",
-  },
-  {
-    id: 3,
-    link: "portfolio",
-    linkName: "portfolio",
-  },
-  {
-    id: 4,
-    link: "skillExperience",
-    linkName: "skills&Exp.",
-  },
-  {
-    id: 5,
-    link: "contact",
-    linkName: "contact",
-  },
-];
+import Linkedin from "./assets/linkedin.svg";
 
 export const portfolios = [
   {
@@ -168,25 +142,20 @@ export const portfolios = [
   },
 ];
 
-export const works = [
-  {
-    id: 0,
-    title: "Front-end Developer",
-    company: "Nova Tendência",
-    start: "May 2023",
-    startYear: "2023",
-    endYear: "Present",
-    end: "Present",
-    stacks: "React, Redux, TypeScript, MUI, Jest",
-  },
-  {
-    id: 1,
-    title: "Front-end Developer",
-    company: "Softeam",
-    start: "September 2021",
-    endYear: "2023",
-    startYear: "2021",
-    end: "May 2023",
-    stacks: "React, TypeScript, Tailwind, Figma",
-  },
-];
+export const socialLinks = [
+    {
+      label: "GitHub",
+      href: "https://github.com/Luiz-Fel",
+      icon: Github,
+    },
+    {
+      label: "LinkedIn",
+      href: "https://linkedin.com/in/Luiz-Fel",
+      icon: Linkedin,
+    },
+    {
+      label: "Email",
+      href: "mailto:luizfelipesantospereira01@gmail.com",
+      icon: Mail,
+    },
+  ];
