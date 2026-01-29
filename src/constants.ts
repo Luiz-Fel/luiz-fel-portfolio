@@ -139,7 +139,7 @@ export const portfolios = [
     id: 4,
     src: portfolioImage, // TODO: Add portfolio screenshot
     title: "Portfolio",
-    description: "Performance-focused portfolio built with minimal JavaScript and a minimalist monochromatic design. Leverages Astro's static generation for optimal load times while maintaining modern interactivity",
+    description: "Performance-focused portfolio built with minimal JavaScript and a minimalist monochromatic design. Leverages Astro's static generation for optimal load times.",
     demo: null, // Add your deployed URL here
     code: "https://github.com/Luiz-Fel/luiz-fel-portfolio",
     technologies: [{

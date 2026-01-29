@@ -8,11 +8,10 @@ import { portfolios } from '../constants';
 const lang = 'en';
 const t = useTranslations(lang);
 
-// Map portfolios data to projects format
 const projects = portfolios.map((portfolio) => ({
   title: portfolio.title,
   description: portfolio.description,
-  image: portfolio.src.src,
+  image: portfolio.src,
   techStack: portfolio.technologies.map(tech => ({
     name: tech.name,
     IconComponent: tech.IconComponent,
