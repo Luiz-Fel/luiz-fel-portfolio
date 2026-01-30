@@ -1,0 +1,88 @@
+---
+import ExperienceItem from "@/components/ExperienceItem.astro";
+import Layout from "@/layouts/Layout.astro";
+import { useTranslations, getLocalizedPath } from "../../i18n/ui";
+
+const lang = "pt-br";
+const t = useTranslations(lang);
+
+const experiences = [
+  {
+    role: "Desenvolvedor Frontend",
+    company: "Nova Tendência (New Tendency)",
+    period: "Maio 2023 — Atual",
+    description:
+      "Atuação em aplicações web de alto tráfego, com foco em otimização de performance, escalabilidade e arquitetura frontend sustentável. Trabalho principalmente com React, TypeScript, Redux e Jest em um ambiente de deploy contínuo.",
+    highlights: [
+      "Refatorei a lógica de renderização de mídia, reduzindo o tempo de processamento em mais de 60% (de ~600ms para menos de 200ms), melhorando significativamente a performance sob alto volume de usuários.",
+
+      "Implementei uma suíte abrangente de testes automatizados com Jest para atender à exigência de 85% de coverage no pipeline de CI, aumentando a confiabilidade do código e reduzindo regressões em fluxos críticos.",
+    ],
+  },
+  {
+    role: "Desenvolvedor Frontend",
+    company: "Softeam",
+    period: "Setembro 2021 — Maio 2023",
+    description:
+      "Manutenção e evolução de aplicações web modernas, atuando em código legado e no desenvolvimento de novas funcionalidades em colaboração com times de design e produto. Utilização de React, TypeScript, Tailwind CSS e Node.js no desenvolvimento de interfaces e integrações frontend.",
+    highlights: [
+      "Introduzi TypeScript para aumentar a previsibilidade do código e utilizei Tailwind CSS/Figma para padronizar interfaces, resultando em melhor manutenibilidade, type-safety e redução significativa no tempo de entrega de funcionalidades.",
+    ],
+  },
+];
+---
+
+<Layout>
+  <section class="min-h-screen pt-24 pb-24 bg-background">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <div class="mb-20">
+        <h2
+          class="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-3"
+        >
+          {t("experience.section")}
+        </h2>
+        <h1
+          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-4"
+        >
+          {t("experience.title")}
+        </h1>
+        <p
+          class="text-base text-muted-foreground max-w-2xl font-light leading-relaxed"
+        >
+          {t("experience.subtitle")}
+        </p>
+      </div>
+
+      <div class="max-w-3xl">
+        {
+          experiences.map((exp, index) => (
+            <ExperienceItem
+              {...exp}
+              isLast={index === experiences.length - 1}
+            />
+          ))
+        }
+      </div>
+
+      <div class="mt-20 pt-12 border-t border-border-subtle max-w-3xl">
+        <p class="text-sm text-muted-foreground mb-4">
+          {t("experience.cta")}
+        </p>
+        <div class="flex gap-4 flex-wrap">
+          <a
+            href={getLocalizedPath("/projects", lang)}
+            class="inline-block border-2 border-muted-foreground px-6 py-2 text-sm uppercase tracking-wider font-medium text-muted-foreground hover:border-foreground hover:text-foreground transition-all duration-300"
+          >
+            {t("experience.viewProjects")}
+          </a>
+          <a
+            href={getLocalizedPath("/contact", lang)}
+            class="inline-block border-2 border-foreground px-6 py-2 text-sm uppercase tracking-wider font-bold hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            {t("experience.contact")}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
