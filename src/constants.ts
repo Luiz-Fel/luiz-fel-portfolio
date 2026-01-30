@@ -44,6 +44,10 @@ export const portfolios = [
     title: "Ignews",
     description:
       "Subscription-based newsletter platform featuring Stripe payment integration, GitHub OAuth authentication, and serverless architecture for React ecosystem content",
+    ptBr: {
+      title: "Ignews",
+      description: "Plataforma de newsletter baseada em assinatura com integração de pagamento Stripe, autenticação OAuth do GitHub e arquitetura serverless para conteúdo do ecossistema React"
+    },
     demo: "https://ignews-luiz-fel.vercel.app/",
     code: "https://github.com/Luiz-Fel/ignews",
     technologies: [{
