@@ -1,0 +1,47 @@
+---
+import ProjectCard from '@/components/ProjectCard.astro';
+import Layout from '../layouts/Layout.astro';
+import { useTranslations } from '../i18n/ui';
+import { portfolios } from '../constants';
+
+
+const lang = 'en';
+const t = useTranslations(lang);
+
+const projects = portfolios.map((portfolio) => ({
+  title: portfolio.title,
+  description: portfolio.description,
+  image: portfolio.src,
+  techStack: portfolio.technologies.map(tech => ({
+    name: tech.name,
+    IconComponent: tech.IconComponent,
+    colorClass: tech.colorClass
+  })),
+  liveUrl: portfolio.demo ?? undefined,
+  githubUrl: portfolio.code,
+  featured: portfolio.id === 0,
+  eager: portfolio.id < 3,
+}));
+---
+<Layout>
+          <section class="min-h-screen pt-24 pb-24 bg-background">
+        <div class="container mx-auto px-6">
+          {/* Section header */}
+          <div class="mb-16">
+            <h2 class="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-3">
+              {t('projects.section')}
+            </h2>
+            <p class="text-3xl sm:text-4xl font-extrabold text-foreground">
+              {t('projects.title')}
+            </p>
+          </div>
+
+          {/* Projects grid */}
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project) => (
+              <ProjectCard {...project} />
+            ))}
+          </div>
+        </div>
+      </section>
+</Layout>

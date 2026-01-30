@@ -1,0 +1,45 @@
+---
+import { useTranslations, type Lang, defaultLang } from '../i18n/ui';
+import { socialLinks } from '../constants';
+
+export interface Props {
+  siteName?: string;
+  lang?: Lang;
+}
+
+const { siteName = 'Luiz Pereira Portfolio', lang = defaultLang } = Astro.props;
+const t = useTranslations(lang);
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-border-subtle py-10">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      
+      <div class="space-y-1">
+        <p class="text-sm font-light text-muted-foreground">
+          © {currentYear} Luiz Pereira — {t('footer.role')}.
+        </p>
+        <p class="text-xs font-light text-muted-foreground/80">
+          {t('footer.built')}
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4">
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+            class="opacity-60 hover:opacity-100 transition-opacity"
+          >
+            <link.icon class="w-5 h-5" />
+          </a>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</footer>
+

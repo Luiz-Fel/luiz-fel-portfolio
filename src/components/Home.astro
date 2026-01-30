@@ -1,0 +1,87 @@
+---
+import ButtonLink from "@/components/ButtonLink.astro";
+import Button from "@/components/ButtonLink.astro";
+import PageTransition from "@/components/PageTransition.astro";
+import { ArrowRight, FileText } from "@lucide/astro";
+import { useTranslations, getLocalizedPath, type Lang, defaultLang } from '../i18n/ui';
+import { Typescript, React, Nodedotjs, Tailwindcss, Astro as AstroIcon, Git, Docker, Nextdotjs, Redux, Jest } from 'simple-icons-astro';
+
+export interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+
+  <section class="relative min-h-screen flex items-center justify-center dot-grid overflow-hidden">
+        <div class="absolute inset-0 bg-linear-to-b from-transparent via-background/50 to-background pointer-events-none" />
+
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="max-w-3xl mx-auto text-center">
+            <div class="fade-in mb-8 inline-flex items-center gap-2 px-3 py-1.5 border rounded-full">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-subtle" />
+              <span class="text-xs font-light text-muted-foreground">
+                {t('home.status')}
+              </span>
+            </div>
+
+            <h1 class="fade-in-delay-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1] mb-6">
+              Luiz Pereira
+            </h1>
+
+            <p class="fade-in-delay-2 text-lg sm:text-xl font-light text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
+              {t('home.subtitle')}
+            </p>
+
+            <div class="fade-in-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <ButtonLink href={getLocalizedPath('/projects', lang)} className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-foreground text-background hover:bg-foreground/90">
+                {t('home.viewProjects')}
+                <ArrowRight class="w-4 h-4 transition-transform ease-out duration-300 group-hover:translate-x-1" />
+              </ButtonLink>
+              <ButtonLink href={lang === 'pt-br' ? '/CVLuizFelipe.pdf' : '/Luiz-Pereira-Web-Developer-Resume.pdf'} className="border bg-transparent text-foreground hover:bg-foreground hover:text-background px-7 py-3 rounded-lg inline-flex items-center gap-2" target="_blank">
+                <FileText class="w-4 h-4" />
+                {t('home.resume')}
+              </ButtonLink>
+            </div>
+
+            <div class="fade-in-delay-4 mt-16 pt-8 border-t border-border/50">
+              <div class="flex flex-wrap items-center justify-center gap-6">
+                <div class="group transition-all duration-300 hover:scale-110" title="TypeScript" aria-label="TypeScript">
+                  <Typescript class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="React" aria-label="React">
+                  <React class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Next.js" aria-label="Next.js">
+                  <Nextdotjs class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Node.js" aria-label="Node.js">
+                  <Nodedotjs class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Redux" aria-label="Redux">
+                  <Redux class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Jest" aria-label="Jest">
+                  <Jest class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Docker" aria-label="Docker">
+                  <Docker class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Git" aria-label="Git">
+                  <Git class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Tailwind CSS" aria-label="Tailwind CSS">
+                  <Tailwindcss class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+                <div class="group transition-all duration-300 hover:scale-110" title="Astro" aria-label="Astro">
+                  <AstroIcon class="w-10 h-10 text-muted-foreground/70 group-hover:text-foreground transition-colors" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-background to-transparent pointer-events-none" />
+      </section>

@@ -1,0 +1,109 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css'; 
+import '../index.css';
+import PageTransition from '@/components/PageTransition.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const htmlLang = lang === 'pt-br' ? 'pt-BR' : 'en';
+
+// SEO & Open Graph
+const siteUrl = Astro.site || 'https://luizpereira.dev'; // Update with your actual domain
+const currentUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImage = new URL('/og-image.png', siteUrl).href; // Add an OG image to public/
+
+// JSON-LD Schema for SEO
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Luiz Pereira",
+  "url": siteUrl,
+  "image": ogImage,
+  "jobTitle": "Frontend Developer",
+  "description": t('meta.description'),
+  "sameAs": [
+    "https://github.com/Luiz-Fel",
+    "https://linkedin.com/in/Luiz-Fel"
+  ],
+  "knowsAbout": ["React.js", "TypeScript", "Next.js", "JavaScript", "Frontend Development", "Web Development"],
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "Your University/Bootcamp" // Update with your education
+  }
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Luiz Pereira Portfolio",
+  "url": siteUrl,
+  "description": t('meta.description'),
+  "author": {
+    "@type": "Person",
+    "name": "Luiz Pereira"
+  },
+  "inLanguage": htmlLang === 'pt-BR' ? 'pt-BR' : 'en-US'
+};
+---
+<html lang={htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <title>{t('meta.title')}</title>
+    
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- Primary Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={t('meta.description')} />
+    <meta name="keywords" content="Portfolio, Luiz Pereira, web developer, React, TypeScript, Frontend Developer, projects, experience, contact" />
+    <meta name="author" content="Luiz Pereira" />
+    
+    <!-- Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:title" content={t('meta.title')} />
+    <meta property="og:description" content={t('meta.description')} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Luiz Pereira Portfolio" />
+    <meta property="og:locale" content={htmlLang === 'pt-BR' ? 'pt_BR' : 'en_US'} />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={currentUrl} />
+    <meta name="twitter:title" content={t('meta.title')} />
+    <meta name="twitter:description" content={t('meta.description')} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:creator" content="@LuizFel" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={currentUrl} />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    
+    <!-- Analytics (Add your tracking code here when ready) -->
+    <!-- Example: Google Analytics, Vercel Analytics, Plausible, etc. -->
+  </head>
+  <body class="min-h-screen bg-background flex flex-col">
+    <Navigation lang={lang} /> 
+    <main class="flex-1">
+      <PageTransition>
+        <slot />
+      </PageTransition>
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>
