@@ -1,47 +1,92 @@
 # Luiz Fel Portfolio
 
-Este é o repositório do portfólio pessoal, agora migrado para o Astro com suporte a React e TypeScript.
+Personal portfolio built with Astro, focused on performance and user experience.
 
-## Tecnologias Utilizadas
+## 🚀 Technologies Used
 
-- **Astro**: Framework para construção de sites rápidos e modernos.
-- **React**: Para componentes interativos.
-- **TypeScript**: Para tipagem estática e melhor manutenção do código.
+- **Astro 5**: Modern framework for high-performance websites.
+- **TypeScript**: Static typing for better code maintenance.
+- **Tailwind CSS 4**: Utility-first CSS framework for fast and responsive styling.
+- **Simple Icons Astro**: Technology icon library for Companies logos and tech stack representation.
+- **Lucide Icons**: Open-Source icons for various UI elements.
 
-## Estrutura do Projeto
+## 📁 Project Structure
 
-- `src/`: Contém o código-fonte do projeto.
-  - `pages/`: Páginas do site (ex.: `index.astro`).
-  - `App.tsx`: Componente principal React (atualmente com código comentado para evitar erros).
-- `public/`: Arquivos estáticos (ex.: imagens, ícones).
-- `.astro/`: Diretório gerado automaticamente pelo Astro (ignorado no Git).
+```
+src/
+├── components/          # Reusable Astro components
+│   ├── ButtonLink.astro
+│   ├── ExperienceItem.astro
+│   ├── Footer.astro
+│   ├── Home.astro
+│   ├── Navigation.astro
+│   ├── PageTransition.astro
+│   └── ProjectCard.astro
+├── i18n/               # Internationalization configuration
+│   └── ui.ts
+├── layouts/            # Base layouts
+│   └── Layout.astro
+├── pages/              # Site pages (automatic routing)
+│   ├── index.astro
+│   ├── contact.astro
+│   ├── experience.astro
+│   ├── projects.astro
+│   └── pt-br/         # Portuguese pages
+├── styles/            # Global styles
+├── assets/            # Images and resources
+└── constants.ts       # Portfolio constants and data
+public/                # Static files
+```
 
-## Scripts Disponíveis
+## 🌐 Internationalization
 
-- `npm run dev`: Inicia o servidor de desenvolvimento.
-- `npm run build`: Gera a versão de produção.
-- `npm run preview`: Visualiza a versão de produção localmente.
+The project supports multiple languages:
+- **English (en)**: Default language
+- **Brazilian Portuguese (pt-br)**: Alternative language
 
-## Como Começar
+Astro automatically manages i18n routes, with fallback to English when needed.
 
-1. Clone o repositório:
+## 🛠️ Available Scripts
+
+- `npm run dev` or `npm start`: Starts the development server.
+- `npm run build`: Generates the optimized production build.
+- `npm run preview`: Previews the production build locally.
+- `npm run astro`: Accesses Astro CLI commands.
+
+## 🚀 Getting Started
+
+1. Clone the repository:
    ```bash
-   git clone <URL_DO_REPOSITORIO>
+   git clone <REPOSITORY_URL>
    ```
-2. Instale as dependências:
+
+2. Install dependencies:
    ```bash
    npm install
    ```
-3. Inicie o servidor de desenvolvimento:
+
+3. Start the development server:
    ```bash
    npm run dev
    ```
 
-## Próximos Passos
+4. Access `http://localhost:4321` in your browser.
 
-- Recriar os componentes React no diretório `src/components`.
-- Substituir o conteúdo do `App.tsx` conforme os componentes forem recriados.
-- Personalizar o estilo e conteúdo do portfólio.
+## 📦 Build and Deploy
+
+To generate the production build:
+
+```bash
+npm run build
+```
+
+The optimized site will be generated in the `dist/` directory and will be ready for deployment on any static hosting platform (Netlify, Vercel, GitHub Pages, etc.).
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
+
+Developed by Luiz-Fel
 
