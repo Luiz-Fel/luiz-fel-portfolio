@@ -30,7 +30,7 @@
   --animate-pulse-subtle: pulse-subtle 3s ease-in-out infinite;
 
   /* Colors */
-  --color-background: oklch(0% 0 0);
+  --color-background: oklch(2% 0 0);
   --color-foreground: oklch(96% 0 0);
 
   --color-card: oklch(4% 0 0);
@@ -83,7 +83,7 @@
 @layer base {
   :root {
     /* Legacy HSL variables for backward compatibility */
-    --background: 0 0% 0%;
+    --background: 0 0% 3%;
     --foreground: 0 0% 96%;
     --card: 0 0% 4%;
     --card-foreground: 0 0% 96%;
